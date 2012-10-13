@@ -48,5 +48,34 @@ public class testBookDao {
 		
 						
 	}
+	
+	@Test
+	public void testUpdateBook(){
+		
+		context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/app-context.xml");
+		BookDao bookDao;
+				
+		GregorianCalendar date = new GregorianCalendar(1990,02,01);
+		Book x = new Book("Foucalts Pendulum", "Umberto Eco", "Mariners Books", 
+							"015603297X", date, false);
+		
+		bookDao = (BookDao)context.getBean("bookDao");
+		
+		bookDao.addBook(x);
+		
+		Book y = bookDao.findBookByTitle("Foucalts Pendulum");
+		
+		y.setAuthor("Some Other Guy");
+		
+		bookDao.updateBook(y);
+		
+		Book z = bookDao.findBookById(y.getId());
+		
+		assertEquals("Some Other Guy", z.getAuthor());
+		
+		bookDao.deleteBook(z);
+	
+	}
+
 
 }

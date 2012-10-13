@@ -41,8 +41,20 @@ public class JdbcBookDao implements BookDao{
 	}
 
 	public void updateBook(Book book) {
-		// TODO Auto-generated method stub
 		
+		String sql = "UPDATE BOOK SET title = ?, author = ?, publisher = ?, " +
+				"publication_date = ?, isbn = ?, available = ? " +
+				"WHERE id = ?";
+		
+		String date = formatDate(book.getPublicationDate());
+		
+		try{
+		jdbcTemplate.update(sql, book.getTitle(), book.getAuthor(), 
+				book.getPublisher(), date, 
+				book.getIsbn(), book.isAvailable(), book.getId());
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public void deleteBook(Book book) {
@@ -71,8 +83,15 @@ public class JdbcBookDao implements BookDao{
 	}
 
 	public Book findBookById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		try {
+			return jdbcTemplate.queryForObject(
+				"SELECT * FROM book WHERE id = ?", 
+				new BookRowMapper(), id);
+		}
+		catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 	
 	public String formatDate(GregorianCalendar inputDate){

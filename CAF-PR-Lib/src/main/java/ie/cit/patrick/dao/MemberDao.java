@@ -4,11 +4,11 @@ import ie.cit.patrick.Member;
 
 public interface MemberDao {
 	
-	void addMember();
+	void addMember(Member member);
 	
-	void updateMember();
+	void updateMember(Member member);
 	
-	void deleteMember();
+	void deleteMember(Member member);
 	
 	Member findMemberByTitle(String Name);
 	

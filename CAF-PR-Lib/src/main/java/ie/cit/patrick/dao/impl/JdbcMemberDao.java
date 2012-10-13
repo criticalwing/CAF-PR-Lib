@@ -2,10 +2,13 @@ package ie.cit.patrick.dao.impl;
 
 import javax.sql.DataSource;
 
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import ie.cit.patrick.Member;
 import ie.cit.patrick.dao.MemberDao;
+import ie.cit.patrick.dao.mapper.MemberRowMapper;
 
 public class JdbcMemberDao implements MemberDao {
 	
@@ -16,33 +19,79 @@ public class JdbcMemberDao implements MemberDao {
 		jdbcTemplate.setDataSource(dataSource);
 	}
 	
-	public void addMember() {
-		// TODO Auto-generated method stub
+	public void addMember(Member member) {
+	
+		String sql = "INSERT INTO `library`.`member` (`id`, `name`, `address1`," +
+				" `address2`, `town`, `contact_number`, `book_allowance`, " +
+				"`balance`, `active`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);";
+		
+		try{
+		jdbcTemplate.update(sql, member.getName(),member.getAddress1(),member.getAddress2(),
+							member.getTown(), member.getContactNumber(), member.getBookAllowance(),
+							member.getBalance(), member.isActive());
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
-	public void updateMember() {
-		// TODO Auto-generated method stub
+	public void updateMember(Member member) {
+
+		String sql = "UPDATE member SET name = ?, address1 = ?, address2 = ?, " +
+				"town = ?, contact_number = ?, book_allowance = ?, balance = ?, active = ? " +
+				"WHERE id = ?";
+		
+		try{
+		jdbcTemplate.update(sql, member.getName(),member.getAddress1(),member.getAddress2(),
+							member.getTown(), member.getContactNumber(), member.getBookAllowance(),
+							member.getBalance(), member.isActive(), member.getId());
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
-	public void deleteMember() {
-		// TODO Auto-generated method stub
+	public void deleteMember(Member member) {
+		
+		String sql = "DELETE FROM `library`.`member` WHERE `member`.`id` = ?";
+		
+		try{
+		jdbcTemplate.update(sql, member.getId());
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
+		
 		
 	}
 
 	@Override
-	public Member findMemberByTitle(String Name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Member findMemberByTitle(String name) {
+		
+		try {
+			return jdbcTemplate.queryForObject(
+				"SELECT * FROM member WHERE name = ?", 
+				new MemberRowMapper(), name);
+		}
+		catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 
 	@Override
 	public Member findMemberById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		try {
+			return jdbcTemplate.queryForObject(
+				"SELECT * FROM member WHERE id = ?", 
+				new MemberRowMapper(), id);
+		}
+		catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+		
 	}
-	
-	
 
+
+		
 }
+
