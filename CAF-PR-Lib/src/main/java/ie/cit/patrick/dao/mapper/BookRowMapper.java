@@ -13,7 +13,7 @@ public class BookRowMapper implements RowMapper<Book>{
 	
 	public Book mapRow(ResultSet rs, int i) throws SQLException {
 		
-		GregorianCalendar date = createDate(rs.getString("publicationDate"));
+		GregorianCalendar date = createDate(rs.getString("publication_date"));
 		 
 		Book book = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("author"), 
 				rs.getString("publisher"), rs.getString("isbn"), date, 
@@ -22,8 +22,8 @@ public class BookRowMapper implements RowMapper<Book>{
 	}
 	
 	private GregorianCalendar createDate(String date){
-		String[] x = date.split("/", 3);
-		GregorianCalendar outputDate = new GregorianCalendar(Integer.parseInt(x[2]), Integer.parseInt(x[1]), Integer.parseInt(x[0]));		
+		String[] x = date.split("-");
+		GregorianCalendar outputDate = new GregorianCalendar(Integer.parseInt(x[0]), Integer.parseInt(x[1]), Integer.parseInt(x[2]));		
 		return outputDate;
 	}
 

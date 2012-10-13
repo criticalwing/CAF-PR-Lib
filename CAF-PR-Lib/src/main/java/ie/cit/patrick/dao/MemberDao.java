@@ -1,5 +1,7 @@
 package ie.cit.patrick.dao;
 
+import ie.cit.patrick.Member;
+
 public interface MemberDao {
 	
 	void addMember();
@@ -7,6 +9,10 @@ public interface MemberDao {
 	void updateMember();
 	
 	void deleteMember();
+	
+	Member findMemberByTitle(String Name);
+	
+	Member findMemberById(int id);
 	
 	
 
