@@ -93,7 +93,7 @@ public class JdbcBookDao implements BookDao{
 			return null;
 		}
 	}
-	
+
 	public String formatDate(GregorianCalendar inputDate){
 		
 		inputDate.add(inputDate.MONTH, -1);

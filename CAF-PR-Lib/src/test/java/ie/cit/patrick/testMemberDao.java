@@ -67,6 +67,8 @@ public class testMemberDao {
 		
 		memberDao.deleteMember(z);
 		
+		assertNull(memberDao.findMemberByTitle("Patrick Robertson"));
+		
 		
 	}
 
