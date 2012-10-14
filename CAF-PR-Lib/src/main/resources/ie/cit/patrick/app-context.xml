@@ -23,5 +23,10 @@
 	    <property name="initialSize" value="3" />
 	</bean>
 	
+	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
+		<constructor-arg name="fileLocation" value="file/location"/>
+		<constructor-arg name="delineator" value="~"/>	
+	</bean>
+	
 
 </beans>

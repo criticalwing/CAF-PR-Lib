@@ -7,14 +7,19 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 public class BookBatchProcessor implements BatchProcessor {
 	
+	@Autowired
 	String fileLocation;
 	String delineator;
 	
+	
 	public BookBatchProcessor(){
 	}
+	
 	public BookBatchProcessor(String fileLocation, String delineator) {
 		this.fileLocation = fileLocation;
 		this.delineator = delineator;
@@ -59,20 +64,28 @@ public class BookBatchProcessor implements BatchProcessor {
 		String[] parts = x.split(delineator);
 		
 		if(parts[0]=="A"){
-			//the add book code
+			//TODO the add book code
 		}
 		else{
 			if (parts[3]=="*U"){
-				//add the make unavailable code
+				//TODO add the make unavailable code
 			} else if (parts[3]=="*A"){
-				//add the make available code
+				//TODO add the make available code
 			} else{
-			//the update book code
+			//TODO the update book code
 			}
 		}
 		
 		}
 		
+		
+		
+	}
+
+	@Override
+	public String toString() {
+		return "BookBatchProcessor [fileLocation=" + fileLocation
+				+ ", delineator=" + delineator + "]";
 	}
 
 	
