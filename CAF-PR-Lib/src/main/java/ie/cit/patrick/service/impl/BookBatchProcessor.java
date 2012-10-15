@@ -3,6 +3,7 @@ package ie.cit.patrick.service.impl;
 import ie.cit.patrick.service.BatchProcessor;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -42,11 +43,14 @@ public class BookBatchProcessor implements BatchProcessor {
 		ArrayList<String> lines = new ArrayList<String>();
 		
 			try{
+				 File file = new File("src\\test\\resources\\batchFile.txt");
+				 System.out.println(file.getCanonicalPath());
+				
+				
 			BufferedReader reader = new BufferedReader(new FileReader(fileLocation));
-			String line = reader.readLine();
-			while (reader != null){
+			String line;
+			while ((line = reader.readLine())!=null){
 				lines.add(line);
-				line = reader.readLine();
 			}
 			reader.close();
 			} catch(FileNotFoundException fNFE){

@@ -6,7 +6,7 @@
 
 	
 	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
-		<constructor-arg name="fileLocation" value="C:/Users/Marzann/Documents/workspace-sts-3.1.0.RELEASE/CAF-PR-Lib/CAF-PR-Lib/src/test/resources/batchFile"/>
+		<constructor-arg name="fileLocation" value="src\test\resources\batchFile"/>
 		<constructor-arg name="delineator" value="~"/>	
 	</bean>
 

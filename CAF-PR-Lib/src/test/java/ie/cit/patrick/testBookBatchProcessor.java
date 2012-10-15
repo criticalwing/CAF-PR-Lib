@@ -35,7 +35,7 @@ public class testBookBatchProcessor {
 		
 		BookBatchProcessor bBP = (BookBatchProcessor) context.getBean("bookBatchProcessor");
 		
-		String x = "BookBatchProcessor [fileLocation=C:/Users/Marzann/Documents/workspace-sts-3.1.0.RELEASE/CAF-PR-Lib/CAF-PR-Lib/src/test/resources/batchFile, delineator=~]";
+		String x = "BookBatchProcessor [fileLocation=src\\test\\resources\\batchFile, delineator=~]";
 		
 		String y = bBP.toString();
 		
@@ -43,7 +43,13 @@ public class testBookBatchProcessor {
 		
 		ArrayList<String> lines = bBP.convertFiletoStrings();
 		
-		System.out.print(lines.toString());
+		String testOutput = "[A~A Book~AN Other~Publisher~134565376x, " +
+								"A~Dune~Frank Herbert~Manifold Press~15656357A]";
+		
+		assertEquals(testOutput, lines.toString());
+		
+		
+
 		
 	}
 	
