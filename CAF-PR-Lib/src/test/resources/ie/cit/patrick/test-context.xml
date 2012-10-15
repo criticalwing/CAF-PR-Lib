@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	
+	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
+		<constructor-arg name="fileLocation" value="C:/Users/Marzann/Documents/workspace-sts-3.1.0.RELEASE/CAF-PR-Lib/CAF-PR-Lib/src/test/resources/batchFile"/>
+		<constructor-arg name="delineator" value="~"/>	
+	</bean>
+
+</beans>

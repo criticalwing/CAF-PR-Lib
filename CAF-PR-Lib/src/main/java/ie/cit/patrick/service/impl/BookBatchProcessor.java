@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class BookBatchProcessor implements BatchProcessor {
 	
-	@Autowired
 	String fileLocation;
 	String delineator;
 	
@@ -27,12 +26,14 @@ public class BookBatchProcessor implements BatchProcessor {
 	public String getFileLocation() {
 		return fileLocation;
 	}
+
 	public void setFileLocation(String fileLocation) {
 		this.fileLocation = fileLocation;
 	}
 	public String getDelineator() {
 		return delineator;
 	}
+
 	public void setDelineator(String delineator) {
 		this.delineator = delineator;
 	}
@@ -57,6 +58,7 @@ public class BookBatchProcessor implements BatchProcessor {
 		return lines;
 	}
 	
+	//Should validate all strings and look at addSlashes
 	public void processLines(ArrayList<String> bookParts){
 		
 		for ( String x : bookParts ){

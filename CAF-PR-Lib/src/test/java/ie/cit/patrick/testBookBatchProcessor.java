@@ -1,6 +1,9 @@
 package ie.cit.patrick;
 
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
 import ie.cit.patrick.service.impl.BookBatchProcessor;
 
 import org.junit.After;
@@ -28,11 +31,19 @@ public class testBookBatchProcessor {
 	@Test
 	public void basicSetup(){
 
-		context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/app-context.xml");
+		context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/test-context.xml");
 		
-		BookBatchProcessor bBP = new BookBatchProcessor();
+		BookBatchProcessor bBP = (BookBatchProcessor) context.getBean("bookBatchProcessor");
 		
-		System.out.print(bBP.toString());
+		String x = "BookBatchProcessor [fileLocation=C:/Users/Marzann/Documents/workspace-sts-3.1.0.RELEASE/CAF-PR-Lib/CAF-PR-Lib/src/test/resources/batchFile, delineator=~]";
+		
+		String y = bBP.toString();
+		
+		assertEquals(x, y);
+		
+		ArrayList<String> lines = bBP.convertFiletoStrings();
+		
+		System.out.print(lines.toString());
 		
 	}
 	
