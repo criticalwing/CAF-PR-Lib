@@ -6,7 +6,7 @@
 
 	
 	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
-		<constructor-arg name="fileLocation" value="src\test\resources\batchFile"/>
+		<constructor-arg name="fileLocation" value="src/test/resources/batchFile"/>
 		<constructor-arg name="delineator" value="~"/>	
 	</bean>
 

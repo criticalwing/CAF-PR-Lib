@@ -24,7 +24,7 @@
 	</bean>
 	
 	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
-		<constructor-arg name="fileLocation" value="file/location"/>
+		<constructor-arg name="fileLocation" value="/src/test/resources/batchFile.txt"/>
 		<constructor-arg name="delineator" value="~"/>	
 	</bean>
 	

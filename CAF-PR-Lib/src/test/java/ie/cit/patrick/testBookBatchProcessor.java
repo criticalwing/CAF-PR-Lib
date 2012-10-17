@@ -10,7 +10,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,21 +20,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 public class testBookBatchProcessor {
 	
-	@Autowired
-	ApplicationContext context;
-
+	ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/test-context.xml");
+	BookBatchProcessor bBP = (BookBatchProcessor) context.getBean("bookBatchProcessor");
+	
+		
 	@Before
 	public void setUp() throws Exception {
 	}
 
 	@Test
 	public void basicSetup(){
-
-		context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/test-context.xml");
-		
-		BookBatchProcessor bBP = (BookBatchProcessor) context.getBean("bookBatchProcessor");
-		
-		String x = "BookBatchProcessor [fileLocation=src\\test\\resources\\batchFile, delineator=~]";
+						
+		String x = "BookBatchProcessor [fileLocation=src/test/resources/batchFile, delineator=~]";
 		
 		String y = bBP.toString();
 		
@@ -43,17 +39,38 @@ public class testBookBatchProcessor {
 		
 		ArrayList<String> lines = bBP.convertFiletoStrings();
 		
-		String testOutput = "[A~A Book~AN Other~Publisher~134565376x, " +
-								"A~Dune~Frank Herbert~Manifold Press~15656357A]";
+		String testOutput = "A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010";
 		
-		assertEquals(testOutput, lines.toString());
-		
-		
-
+		assertEquals(testOutput, lines.get(0).toString());
 		
 	}
 	
+	@Test
+	public void testValidateString(){
+		
+		String[] test = {"A", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "1992-05-01", "1853260010"};
+		String[] test2 = {"U", "1236", "*U"};
+		String[] test3 = {"A", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "05-01", "1853260010"};
+		String[] test4 = {"X", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "1992-05-01", "1853260010"};
+		String[] test5 = {"A", "Wuthering Heights", "Emily Bronte", "1992-05-01", "1853260010"};
+		String[] test6 = {"X", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "19920501", "1853260010"};
+		
+		assertTrue(bBP.validateStringArray(test));
+		assertTrue(bBP.validateStringArray(test2));
+		assertFalse(bBP.validateStringArray(test3));
+		assertFalse(bBP.validateStringArray(test4));
+		assertFalse(bBP.validateStringArray(test5));
+		assertFalse(bBP.validateStringArray(test6));
+		
+	}
 	
+	@Test
+	public void processLines(){
+				
+		String x = "Error while processing line 5 of the batch file.\nThe batch file has been processed\n";
+		assertEquals(x, bBP.processLines(bBP.convertFiletoStrings()));
+		
+	}
 	
 	
 	@After

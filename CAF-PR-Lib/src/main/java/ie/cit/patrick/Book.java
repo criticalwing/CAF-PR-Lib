@@ -9,9 +9,6 @@ public class Book {
 	private GregorianCalendar publicationDate;
 	private boolean available;
 	
-	public Book(){
-		
-	}
 	
 	public Book(String title, String author, String publisher,
 			String isbn, GregorianCalendar publicationDate, boolean available) {
