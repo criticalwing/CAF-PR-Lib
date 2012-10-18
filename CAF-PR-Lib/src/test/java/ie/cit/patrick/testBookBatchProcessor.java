@@ -65,7 +65,7 @@ public class testBookBatchProcessor {
 	}
 	
 	@Test
-	public void processLines(){
+	public void testProcessLines(){
 				
 		String x = "Error while processing line 5 of the batch file.\nThe batch file has been processed\n";
 		assertEquals(x, bBP.processLines(bBP.convertFiletoStrings()));
