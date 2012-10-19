@@ -12,13 +12,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration( { "classpath:/ie/cit/patrick/app-context.xml" } )
+@ContextConfiguration( { "classpath:/ie/cit/patrick/test-context.xml" } )
 	
 		
 public class testMemberDao {
 	
 	@Autowired
-	ApplicationContext context;
+	MemberDao memberDao;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -26,9 +26,6 @@ public class testMemberDao {
 
 	@Test
 	public void testAddFindDeleteMember() {
-		
-		context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/app-context.xml");
-		MemberDao memberDao = (MemberDao)context.getBean("memberDao");
 		
 		Member x = new Member(3, "Patrick Robertson", "Hjaltland", "Pullerick", "Crookstown","0857103950", 10.0, true);
 		
@@ -47,9 +44,6 @@ public class testMemberDao {
 	
 	@Test
 	public void testUpdateMember() {
-		
-		context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/app-context.xml");
-		MemberDao memberDao = (MemberDao)context.getBean("memberDao");
 		
 		Member x = new Member(3, "Patrick Robertson", "Hjaltland", "Pullerick", "Crookstown","0857103950", 10.0, true);
 		

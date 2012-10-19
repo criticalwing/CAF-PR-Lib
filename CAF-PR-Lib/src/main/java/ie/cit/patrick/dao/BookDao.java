@@ -10,6 +10,10 @@ public interface BookDao {
 	
 	void deleteBook(Book book);
 	
+	void makeBookUnavailable(int id);
+	
+	void makeBookAvailable(int id);
+	
 	Book findBookByTitle(String Name);
 	
 	Book findBookById(int id);

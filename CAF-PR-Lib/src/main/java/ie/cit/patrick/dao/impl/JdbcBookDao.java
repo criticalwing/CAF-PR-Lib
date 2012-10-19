@@ -23,8 +23,8 @@ public class JdbcBookDao implements BookDao{
 
 	public void addBook(Book book) {
 
-		String sql = "INSERT INTO `library`.`book` (`id`, `title`, `author`, " +
-				"`publisher`, `publication_date`, `isbn`, `available`) " +
+		String sql = "INSERT INTO book (id, title, author, " +
+				"publisher, publication_date, isbn, available) " +
 				"VALUES (NULL, ?, ?, " +
 				"?, ?, ?, ?)";
 		
@@ -59,7 +59,7 @@ public class JdbcBookDao implements BookDao{
 
 	public void deleteBook(Book book) {
 		
-		String sql = "DELETE FROM `library`.`book` WHERE `book`.`id` = ?";
+		String sql = "DELETE FROM book WHERE id = ?";
 		
 		try{
 		jdbcTemplate.update(sql, book.getId());
@@ -69,6 +69,30 @@ public class JdbcBookDao implements BookDao{
 		
 	}
 
+	public void makeBookAvailable(int id){
+				
+		String sql = "UPDATE BOOK SET available = true " +
+				"WHERE id = ?";
+		
+		try{
+		jdbcTemplate.update(sql, id);
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void makeBookUnavailable(int id){
+		
+		String sql = "UPDATE BOOK SET available = false " +
+				"WHERE id = ?";
+		
+		try{
+		jdbcTemplate.update(sql, id);
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public Book findBookByTitle(String title) {
 		
 		try {
@@ -100,12 +124,12 @@ public class JdbcBookDao implements BookDao{
 		
 		String strdate = null;
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		if (inputDate != null) {
 		strdate = sdf.format(inputDate.getTime());
 		}
-		
+				
 		return strdate;
 		
 	}

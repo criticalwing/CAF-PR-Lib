@@ -21,14 +21,13 @@ public class JdbcMemberDao implements MemberDao {
 	
 	public void addMember(Member member) {
 	
-		String sql = "INSERT INTO `library`.`member` (`id`, `name`, `address1`," +
-				" `address2`, `town`, `contact_number`, `book_allowance`, " +
-				"`balance`, `active`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO Member (name,address1,address2,town,contact_number,balance)"+
+						"VALUES (?, ?, ?, ?, ?, ?);";
 		
 		try{
 		jdbcTemplate.update(sql, member.getName(),member.getAddress1(),member.getAddress2(),
-							member.getTown(), member.getContactNumber(), member.getBookAllowance(),
-							member.getBalance(), member.isActive());
+							member.getTown(), member.getContactNumber(),
+							member.getBalance());
 		} catch (DataAccessException e){
 			System.out.println(e.getMessage());
 		}
@@ -53,7 +52,7 @@ public class JdbcMemberDao implements MemberDao {
 
 	public void deleteMember(Member member) {
 		
-		String sql = "DELETE FROM `library`.`member` WHERE `member`.`id` = ?";
+		String sql = "DELETE FROM member WHERE id = ?";
 		
 		try{
 		jdbcTemplate.update(sql, member.getId());

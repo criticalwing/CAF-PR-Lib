@@ -3,25 +3,28 @@ package ie.cit.patrick;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
+import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.service.impl.BookBatchProcessor;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration( { "classpath:/ie/cit/patrick/app-context.xml" } )
+@ContextConfiguration( { "classpath:ie/cit/patrick/test-context.xml" } )
 
 public class testBookBatchProcessor {
 	
-	ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/ie/cit/patrick/test-context.xml");
-	BookBatchProcessor bBP = (BookBatchProcessor) context.getBean("bookBatchProcessor");
+	@Autowired
+	BookBatchProcessor bookBatchProcessor;
+	@Autowired
+	BookDao bookDao;
 	
 		
 	@Before
@@ -33,11 +36,11 @@ public class testBookBatchProcessor {
 						
 		String x = "BookBatchProcessor [fileLocation=src/test/resources/batchFile, delineator=~]";
 		
-		String y = bBP.toString();
+		String y = bookBatchProcessor.toString();
 		
 		assertEquals(x, y);
 		
-		ArrayList<String> lines = bBP.convertFiletoStrings();
+		ArrayList<String> lines = bookBatchProcessor.convertFiletoStrings();
 		
 		String testOutput = "A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010";
 		
@@ -50,28 +53,49 @@ public class testBookBatchProcessor {
 		
 		String[] test = {"A", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "1992-05-01", "1853260010"};
 		String[] test2 = {"U", "1236", "*U"};
-		String[] test3 = {"A", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "05-01", "1853260010"};
+		String[] test3 = {"A", "Wuthering Heights", "Emily Bronte", "05-01", "1853260010"};
 		String[] test4 = {"X", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "1992-05-01", "1853260010"};
 		String[] test5 = {"A", "Wuthering Heights", "Emily Bronte", "1992-05-01", "1853260010"};
 		String[] test6 = {"X", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "19920501", "1853260010"};
+		String[] test7 = {"X", "Word","Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "19920501", "1853260010"};
+		String[] test8 = {"U", "Test", "*A"};
 		
-		assertTrue(bBP.validateStringArray(test));
-		assertTrue(bBP.validateStringArray(test2));
-		assertFalse(bBP.validateStringArray(test3));
-		assertFalse(bBP.validateStringArray(test4));
-		assertFalse(bBP.validateStringArray(test5));
-		assertFalse(bBP.validateStringArray(test6));
+		assertTrue(bookBatchProcessor.validateStringArray(test));
+		assertTrue(bookBatchProcessor.validateStringArray(test2));
+		assertFalse(bookBatchProcessor.validateStringArray(test3));
+		assertFalse(bookBatchProcessor.validateStringArray(test4));
+		assertFalse(bookBatchProcessor.validateStringArray(test5));
+		assertFalse(bookBatchProcessor.validateStringArray(test6));
+		assertFalse(bookBatchProcessor.validateStringArray(test7));
+		assertFalse(bookBatchProcessor.validateStringArray(test8));
 		
 	}
 	
 	@Test
-	public void testProcessLines(){
-				
-		String x = "Error while processing line 5 of the batch file.\nThe batch file has been processed\n";
-		assertEquals(x, bBP.processLines(bBP.convertFiletoStrings()));
+	public void testChanges(){
+		bookBatchProcessor.processLines(bookBatchProcessor.convertFiletoStrings());
+		GregorianCalendar date = new GregorianCalendar(1992,05,01);
+		Book y = new Book("Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", 
+							"1853260010", date, true);
 		
+		Book x = bookDao.findBookByTitle("Wuthering Heights");
+		assertEquals(x.getAuthor(),y.getAuthor());
+		assertEquals(x.getIsbn(),y.getIsbn());
+		assertEquals(x.getPublicationDate(),y.getPublicationDate());
+		
+		String a = bookDao.findBookByTitle("Dancing at Lughnasa").getAuthor();
+		String b = "Brian Friel";
+		
+		assertEquals(b,a);
+		
+		assertTrue(bookDao.findBookById(3421).isAvailable());
+		assertFalse(bookDao.findBookById(1236).isAvailable());
+		
+		System.out.print(bookBatchProcessor.report());
+		System.out.print(bookBatchProcessor.errorLog());
+		
+
 	}
-	
 	
 	@After
 	public void tearDown() throws Exception {

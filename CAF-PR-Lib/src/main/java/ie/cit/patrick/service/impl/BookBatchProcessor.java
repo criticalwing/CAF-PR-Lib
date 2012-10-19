@@ -1,5 +1,7 @@
 package ie.cit.patrick.service.impl;
 
+import ie.cit.patrick.Book;
+import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.service.BatchProcessor;
 
 import java.io.BufferedReader;
@@ -9,21 +11,33 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.GregorianCalendar;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class BookBatchProcessor implements BatchProcessor {
 	
 	String fileLocation;
-	String delineator;	
+	String delineator;
+	@Autowired
+	BookDao bookDao;
+	ArrayList<String> batchFileReport;
+	ArrayList<String> errorLog;
 	
+	//Constructors
 	public BookBatchProcessor(){
+		batchFileReport =new ArrayList<String>();
+		errorLog = new ArrayList<String>();
 	}
 	public BookBatchProcessor(String fileLocation, String delineator) {
 		this.fileLocation = fileLocation;
 		this.delineator = delineator;
+		batchFileReport =new ArrayList<String>();
+		errorLog = new ArrayList<String>();
 	}
 	
+	//Getter & Setters
 	public String getFileLocation() {
 		return fileLocation;
 	}
@@ -36,7 +50,14 @@ public class BookBatchProcessor implements BatchProcessor {
 	public void setDelineator(String delineator) {
 		this.delineator = delineator;
 	}
+	public ArrayList<String> getBatchFileReport() {
+		return batchFileReport;
+	}
+	public void setBatchFileReport(ArrayList<String> batchFileReport) {
+		this.batchFileReport = batchFileReport;
+	}
 	
+	//Processing Methods
 	public ArrayList<String> convertFiletoStrings(){		
 		ArrayList<String> lines = new ArrayList<String>();
 		
@@ -57,9 +78,7 @@ public class BookBatchProcessor implements BatchProcessor {
 		return lines;
 	}
 	
-	public String processLines(ArrayList<String> bookParts){
-		
-		String output= "";
+	public void processLines(ArrayList<String> bookParts){
 		
 		for ( String x : bookParts ){
 		
@@ -68,37 +87,44 @@ public class BookBatchProcessor implements BatchProcessor {
 			if(validateStringArray(parts)){
 				processChanges(parts);
 			} else {
-				output = output + "Error while processing line " + (bookParts.indexOf(x)+1) + " of the batch file.\n";
+				batchFileReport.add("*ERROR*");
+				errorLog.add("There is an error on line " + (bookParts.indexOf(x)+1) + " of the batch file.");
 			}
 		}
-		output = output + "The batch file has been processed\n";
-		return output;
 
 	}
 	
 	public void processChanges(String[] parts){
-		
+	
+	
 		if(parts[0].equals("A")){
-			System.out.print("Add Book\n");
-			/*String[] wholeDate = parts[5].split("-");
+			String[] wholeDate = parts[4].split("-");
 			GregorianCalendar date = new GregorianCalendar(Integer.parseInt(wholeDate[0]), Integer.parseInt(wholeDate[1]), Integer.parseInt(wholeDate[2]));
-			bookDao.addBook(new Book(parts[0], parts[1], parts[2], parts[3], date, true));*/
+			Book toAdd = new Book(parts[1], parts[2], parts[3], parts[5], date, true);
+			bookDao.addBook(toAdd);
+			batchFileReport.add("Book: " + "\"" + parts[1] + "\"" +" by "+ "\"" + parts[2]+ "\"" + " added to the Database");
 		}
 		else {
 			if (parts[2].equals("*U")){
-				//TODO add the make unavailable code
-				System.out.print("Make book Unavailable\n");
+				bookDao.makeBookUnavailable(Integer.parseInt(parts[1]));
+				Book output = bookDao.findBookById(Integer.parseInt(parts[1]));
+				batchFileReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked unavailable");
 			} else if (parts[2].equals("*A")){
-				//TODO add the make available code
-				System.out.print("Make book Available\n");
-			} else{
-			//TODO the update book code
-				System.out.print("Update Book\n");
+				bookDao.makeBookAvailable(Integer.parseInt(parts[1]));
+				Book output = bookDao.findBookById(Integer.parseInt(parts[1]));
+				batchFileReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked available");
+			} else{			
+				String[] wholeDate = parts[5].split("-");
+				GregorianCalendar date = new GregorianCalendar(Integer.parseInt(wholeDate[0]), Integer.parseInt(wholeDate[1]), Integer.parseInt(wholeDate[2]));
+				Book toUpDate = new Book(Integer.parseInt(parts[1]), parts[2], parts[3], parts[4], parts[6], date, true);
+				bookDao.updateBook(toUpDate);
+				batchFileReport.add("Book: " + "\"" + parts[2] + "\"" +" by "+ "\"" + parts[3]+ "\"" + " updated");
 			}
 		}
 		
 	}
 	
+	//Validation Methods
 	public boolean validateStringArray(String[] parts){
 		
 		//check if array holds either six, seven or three elements for processing
@@ -113,6 +139,7 @@ public class BookBatchProcessor implements BatchProcessor {
 		if(parts[0].contains("A")==false&&parts[0].contains("U")==false){
 			return false;
 		}
+		//check that if a book is to be added or updated it has the correct date format
 		if(parts.length==6){
 			if(validateDate(parts[4])==false){
 				return false;
@@ -122,32 +149,70 @@ public class BookBatchProcessor implements BatchProcessor {
 			if(validateDate(parts[5])==false){
 				return false;
 			}
-			//TODO add a bit that validates that the ID number exists
+		}
+		if(parts.length==3||parts.length==7){
+			if(validateInt(parts[1])==false){
+				return false;
+			}
 		}
 		return true;
 		
 	}
-	
 	private boolean validateDate(String date){
 		
 		SimpleDateFormat x = new SimpleDateFormat("yyyy-MM-dd");
-		
-		Date valDate = null;
-		
+				
 		try{
-			valDate = x.parse(date);
+			x.parse(date);
 		} catch (ParseException e){
 			return false;			
 		}
 		return true;
 
 	}
+	private boolean validateInt(String input){
 		
+		try { 
+				Integer.parseInt(input);  
+				} 
+				catch(NumberFormatException nFE) { 
+				return false;
+				}
+		return true;
+		
+	}
+	
+	//String Outputs
 	@Override
- 	public String toString() {
+	public String report() {
+		String output = "";
+		int x = 1;
+		for(String line:batchFileReport){
+			output = output + x +". " + line + "\n";
+			x++;
+		}
+		
+		output = output + "-----------------------------------\nThe batch file has been processed\n";
+		
+		return output;
+	}
+	public String errorLog() {
+		String output = "\nERROR LOG\n-----------------------------------\n";;
+		int x = 1;
+		for(String line:errorLog){
+			output = output + x +". " + line + "\n";
+			x++;
+		}
+		
+		output = output + "-----------------------------------\n";
+		
+		return output;
+	}
+	public String toString() {
 		return "BookBatchProcessor [fileLocation=" + fileLocation
 				+ ", delineator=" + delineator + "]";
 	}
+
 
 	
 

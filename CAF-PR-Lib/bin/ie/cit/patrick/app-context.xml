@@ -6,27 +6,13 @@
 	<description>Basic Setup</description>
 
 	
+
 	<bean id="bookDao" class="ie.cit.patrick.dao.impl.JdbcBookDao">
 		<constructor-arg ref="dataSource"/>
 	</bean>
 	
 	<bean id="memberDao" class="ie.cit.patrick.dao.impl.JdbcMemberDao">
 		<constructor-arg ref="dataSource"/>
-	</bean>
-
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-	    <property name="url" value="jdbc:mysql://localhost/library"/>
-	    <property name="username" value="root"/>
-	    <property name="password" value=""/>
-	    <property name="maxActive" value="10"/>
-	    <property name="initialSize" value="3" />
-	</bean>
-	
-	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
-		<constructor-arg name="fileLocation" value="/src/test/resources/batchFile.txt"/>
-		<constructor-arg name="delineator" value="~"/>	
-	</bean>
-	
+	</bean>	
 
 </beans>

@@ -6,10 +6,13 @@ public interface BatchProcessor {
 	
 	ArrayList<String> convertFiletoStrings();
 	
-	String processLines(ArrayList<String> parts);
+	void processLines(ArrayList<String> parts);
 	
 	void processChanges(String[] parts);
 	
 	boolean validateStringArray(String[] parts);
+	
+	String report();
 
+	String errorLog();
 }
