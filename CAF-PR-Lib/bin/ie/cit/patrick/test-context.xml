@@ -8,7 +8,12 @@
 	<import resource="app-context.xml"/>
 	
 	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
-		<constructor-arg name="fileLocation" value="src/test/resources/batchFile"/>
+		<constructor-arg name="fileLocation" value="src/test/resources/memberbatchFile"/>
+		<constructor-arg name="delineator" value="~"/>	
+	</bean>
+	
+	<bean id="memberBatchProcessor" class="ie.cit.patrick.service.impl.MemberBatchProcessor">
+		<constructor-arg name="fileLocation" value="src/test/resources/bookbatchFile"/>
 		<constructor-arg name="delineator" value="~"/>	
 	</bean>
 

@@ -22,18 +22,18 @@ public class BookBatchProcessor implements BatchProcessor {
 	String delineator;
 	@Autowired
 	BookDao bookDao;
-	ArrayList<String> batchFileReport;
+	ArrayList<String> batchFullReport;
 	ArrayList<String> errorLog;
 	
 	//Constructors
 	public BookBatchProcessor(){
-		batchFileReport =new ArrayList<String>();
+		batchFullReport =new ArrayList<String>();
 		errorLog = new ArrayList<String>();
 	}
 	public BookBatchProcessor(String fileLocation, String delineator) {
 		this.fileLocation = fileLocation;
 		this.delineator = delineator;
-		batchFileReport =new ArrayList<String>();
+		batchFullReport =new ArrayList<String>();
 		errorLog = new ArrayList<String>();
 	}
 	
@@ -51,10 +51,10 @@ public class BookBatchProcessor implements BatchProcessor {
 		this.delineator = delineator;
 	}
 	public ArrayList<String> getBatchFileReport() {
-		return batchFileReport;
+		return batchFullReport;
 	}
 	public void setBatchFileReport(ArrayList<String> batchFileReport) {
-		this.batchFileReport = batchFileReport;
+		this.batchFullReport = batchFileReport;
 	}
 	
 	//Processing Methods
@@ -87,7 +87,7 @@ public class BookBatchProcessor implements BatchProcessor {
 			if(validateStringArray(parts)){
 				processChanges(parts);
 			} else {
-				batchFileReport.add("*ERROR*");
+				batchFullReport.add("*ERROR*");
 				errorLog.add("There is an error on line " + (bookParts.indexOf(x)+1) + " of the batch file.");
 			}
 		}
@@ -102,23 +102,23 @@ public class BookBatchProcessor implements BatchProcessor {
 			GregorianCalendar date = new GregorianCalendar(Integer.parseInt(wholeDate[0]), Integer.parseInt(wholeDate[1]), Integer.parseInt(wholeDate[2]));
 			Book toAdd = new Book(parts[1], parts[2], parts[3], parts[5], date, true);
 			bookDao.addBook(toAdd);
-			batchFileReport.add("Book: " + "\"" + parts[1] + "\"" +" by "+ "\"" + parts[2]+ "\"" + " added to the Database");
+			batchFullReport.add("Book: " + "\"" + parts[1] + "\"" +" by "+ "\"" + parts[2]+ "\"" + " added to the Database");
 		}
 		else {
 			if (parts[2].equals("*U")){
 				bookDao.makeBookUnavailable(Integer.parseInt(parts[1]));
 				Book output = bookDao.findBookById(Integer.parseInt(parts[1]));
-				batchFileReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked unavailable");
+				batchFullReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked unavailable");
 			} else if (parts[2].equals("*A")){
 				bookDao.makeBookAvailable(Integer.parseInt(parts[1]));
 				Book output = bookDao.findBookById(Integer.parseInt(parts[1]));
-				batchFileReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked available");
+				batchFullReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked available");
 			} else{			
 				String[] wholeDate = parts[5].split("-");
 				GregorianCalendar date = new GregorianCalendar(Integer.parseInt(wholeDate[0]), Integer.parseInt(wholeDate[1]), Integer.parseInt(wholeDate[2]));
 				Book toUpDate = new Book(Integer.parseInt(parts[1]), parts[2], parts[3], parts[4], parts[6], date, true);
 				bookDao.updateBook(toUpDate);
-				batchFileReport.add("Book: " + "\"" + parts[2] + "\"" +" by "+ "\"" + parts[3]+ "\"" + " updated");
+				batchFullReport.add("Book: " + "\"" + parts[2] + "\"" +" by "+ "\"" + parts[3]+ "\"" + " updated");
 			}
 		}
 		
@@ -184,27 +184,69 @@ public class BookBatchProcessor implements BatchProcessor {
 	
 	//String Outputs
 	@Override
-	public String report() {
-		String output = "";
+	public String fullReport() {
+		String output = "------------ FULL REPORT -------------\n";
 		int x = 1;
-		for(String line:batchFileReport){
+		for(String line:batchFullReport){
 			output = output + x +". " + line + "\n";
 			x++;
 		}
 		
-		output = output + "-----------------------------------\nThe batch file has been processed\n";
-		
+		output = output + "--------------------------------------\n";
 		return output;
 	}
+	
+	public String report() {
+		int booksAdded = 0;
+		int booksUpdated = 0;
+		int booksAvail = 0;
+		int booksUnavail = 0;
+		
+		for(String line:batchFullReport){
+			if(line.contains(" added")){
+				booksAdded++;
+				}
+			if(line.contains(" updated")){
+				booksUpdated++;
+			}
+			if(line.contains(" available")){
+				booksAvail++;
+			}
+			if(line.contains(" unavailable")){
+				booksUnavail++;
+			}
+		}
+		
+		String output = "----------- REPORT -----------------\n" +
+				batchFullReport.size() + " total record" + sReturn(batchFullReport.size()) + " processed\n" +
+				booksAdded + " book" + sReturn(booksAdded) +" added\n" +
+				booksUpdated + " book" + sReturn(booksUpdated) + " updated\n" +
+				booksAvail +	" book" + sReturn(booksAvail) + " made available\n" +
+				booksUnavail + " book" + sReturn(booksUnavail) + " made unavailable\n" +
+						"------------------------------------\n\n";
+		return output;
+	}
+	
+	public String sReturn(int x){
+		if(x>1){
+			return "s";
+		}
+		else{
+			return"";
+		}
+		
+	}
+	
+	
 	public String errorLog() {
-		String output = "\nERROR LOG\n-----------------------------------\n";;
+		String output = "\n------------ ERROR LOG ----------------\n";;
 		int x = 1;
 		for(String line:errorLog){
 			output = output + x +". " + line + "\n";
 			x++;
 		}
 		
-		output = output + "-----------------------------------\n";
+		output = output + "---------------------------------------\n";
 		
 		return output;
 	}

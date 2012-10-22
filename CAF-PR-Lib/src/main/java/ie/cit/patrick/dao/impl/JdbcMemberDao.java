@@ -90,7 +90,12 @@ public class JdbcMemberDao implements MemberDao {
 		
 	}
 
-
+	public void makeMemberInactive(int id){
+		
+		
+		
+		
+	}
 		
 }
 

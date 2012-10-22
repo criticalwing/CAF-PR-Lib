@@ -7,18 +7,25 @@ public class Member {
 	private double balance;
 	private boolean active;
 	
-	public Member(int bookAllowance, String name, String address1,
-			String address2, String town, String contactNumber, double balance,
-			boolean active) {
+	public Member(String name, String address1,	String address2, String town, String contactNumber) {
 		super();
-		this.bookAllowance = bookAllowance;
 		this.name = name;
 		this.address1 = address1;
 		this.address2 = address2;
 		this.town = town;
 		this.contactNumber = contactNumber;
-		this.balance = balance;
-		this.active = active;
+		this.balance = 0;
+		this.active = true;
+	}
+	
+	public Member(String name, String address1, String town, String contactNumber) {
+		super();
+		this.name = name;
+		this.address1 = address1;
+		this.town = town;
+		this.contactNumber = contactNumber;
+		this.balance = 0;
+		this.active = true;
 	}
 	
 	public Member(int id, int bookAllowance, String name, String address1,

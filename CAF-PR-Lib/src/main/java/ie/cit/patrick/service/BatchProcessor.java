@@ -15,4 +15,6 @@ public interface BatchProcessor {
 	String report();
 
 	String errorLog();
+
+	String fullReport();
 }
