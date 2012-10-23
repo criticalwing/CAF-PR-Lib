@@ -34,7 +34,7 @@ public class testBookBatchProcessor {
 	@Test
 	public void basicSetup(){
 						
-		String x = "BookBatchProcessor [fileLocation=src/test/resources/batchFile, delineator=~]";
+		String x = "BookBatchProcessor [fileLocation=src/test/resources/bookbatchFile, delineator=~]";
 		
 		String y = bookBatchProcessor.toString();
 		
@@ -60,14 +60,16 @@ public class testBookBatchProcessor {
 		String[] test7 = {"X", "Word","Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "19920501", "1853260010"};
 		String[] test8 = {"U", "Test", "*A"};
 		
-		assertTrue(bookBatchProcessor.validateStringArray(test));
-		assertTrue(bookBatchProcessor.validateStringArray(test2));
-		assertFalse(bookBatchProcessor.validateStringArray(test3));
-		assertFalse(bookBatchProcessor.validateStringArray(test4));
-		assertFalse(bookBatchProcessor.validateStringArray(test5));
-		assertFalse(bookBatchProcessor.validateStringArray(test6));
-		assertFalse(bookBatchProcessor.validateStringArray(test7));
-		assertFalse(bookBatchProcessor.validateStringArray(test8));
+		assertTrue(bookBatchProcessor.validateStringArray(test,11));
+		assertTrue(bookBatchProcessor.validateStringArray(test2,12));
+		assertFalse(bookBatchProcessor.validateStringArray(test3,13));
+		assertFalse(bookBatchProcessor.validateStringArray(test4,14));
+		assertFalse(bookBatchProcessor.validateStringArray(test5,15));
+		assertFalse(bookBatchProcessor.validateStringArray(test6,16));
+		assertFalse(bookBatchProcessor.validateStringArray(test7,17));
+		assertFalse(bookBatchProcessor.validateStringArray(test8,18));
+		
+		bookBatchProcessor.setErrorLog(new ArrayList<String>());
 		
 	}
 	

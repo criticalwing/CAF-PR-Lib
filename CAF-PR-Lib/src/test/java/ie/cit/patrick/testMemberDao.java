@@ -25,7 +25,7 @@ public class testMemberDao {
 	@Test
 	public void testAddFindDeleteMember() {
 		
-		Member x = new Member(3, "Patrick Robertson", "Hjaltland", "Pullerick", "Crookstown","0857103950", 10.0, true);
+		Member x = new Member("Patrick Robertson", "Hjaltland", "Pullerick", "Crookstown","0857103950");
 		
 		memberDao.addMember(x);
 		
@@ -43,7 +43,7 @@ public class testMemberDao {
 	@Test
 	public void testUpdateMember() {
 		
-		Member x = new Member(3, "Patrick Robertson", "Hjaltland", "Pullerick", "Crookstown","0857103950", 10.0, true);
+		Member x = new Member("Patrick Robertson", "Hjaltland", "Pullerick", "Crookstown","0857103950");
 		
 		memberDao.addMember(x);
 		

@@ -9,11 +9,19 @@ VALUES ('Digital Marketing Strategy Implementation and Practice', 'Dave Chaffey'
 INSERT INTO book (id,title,author,publisher,publication_date,isbn) 
 VALUES ('4454','Dancing at Lughnasa', 'A N Other', 'Faber and Faber', '2012-07-12', '0571144799');
 
-INSERT INTO Member (name,address1,address2,town,contact_number,balance) 
-VALUES ('Bertie Ahern', 'Big House', 'Rich Street', 'Dublin', '018001231235','1500.00');
-INSERT INTO Member (name,address1,address2,town,contact_number,balance) 
-VALUES ('Chris Stephenson', 'New House','Stephen Street', 'Boyle', '0331234567', '0.00');
+INSERT INTO Member (id, name,address1,address2,town,contact_number,balance, active) 
+VALUES ('1234','Bertie Ahern', 'Big House', 'Rich Street', 'Dublin', '018001231235','1500.00', true);
+INSERT INTO Member (id, name,address1,address2,town,contact_number,balance, active) 
+VALUES ('4567','Chris Stephenson', 'New House','Stephen Street', 'Boyle', '0331234567', '0.00', false);
 INSERT INTO Member (name,address1,address2,town,contact_number,balance) 
 VALUES ('Peter Smith', '18', 'St Johns Close', 'Macroom', '02212344567', '10.00');
 INSERT INTO Member (name,address1,address2,town,contact_number,balance) 
 VALUES ('Vera Saunders', '24A', 'Elysian', 'Cork', '0211234667', '20.00');
+INSERT INTO Member (id,name,address1,address2,town,contact_number,balance) 
+VALUES ('232','Stuart Little', '100 Boardwalk', 'Cork', 'Cork', '0211234667', '20.00');
+INSERT INTO Member (id, name,address1,address2,town,contact_number,balance) 
+VALUES ('9332','Steven Saunders', '24A', 'Elysian', 'Cork', '0211234667', '0.00');
+INSERT INTO Member (id, name,address1,address2,town,contact_number,balance) 
+VALUES ('543','Logan Robertson', 'Hjaltland', 'Pullerick', 'Cork', '0211234667', '10.00');
+INSERT INTO Member (id, name,address1,address2,town,contact_number,balance) 
+VALUES ('3425','Janet Leigh', 'Hjaltland', 'Pullerick', 'Cork', '0211234667', '12.00');

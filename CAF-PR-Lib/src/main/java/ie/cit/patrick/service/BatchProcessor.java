@@ -8,9 +8,9 @@ public interface BatchProcessor {
 	
 	void processLines(ArrayList<String> parts);
 	
-	void processChanges(String[] parts);
+	void processDecider(String[] parts);
 	
-	boolean validateStringArray(String[] parts);
+	boolean validateStringArray(String[] parts, int position);
 	
 	String report();
 

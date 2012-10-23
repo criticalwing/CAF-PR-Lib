@@ -3,9 +3,6 @@ package ie.cit.patrick;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
-
-import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.service.impl.MemberBatchProcessor;
 
@@ -35,7 +32,7 @@ public class testMemberBatchProcessor {
 	@Test
 	public void basicSetup(){
 						
-		String x = "MemberBatchProcessor [fileLocation=src/test/resources/batchFile, delineator=~]";
+		String x = "MemberBatchProcessor [fileLocation=src/test/resources/memberbatchFile, delineator=~]";
 		
 		String y = memberBatchProcessor.toString();
 		
@@ -43,7 +40,7 @@ public class testMemberBatchProcessor {
 		
 		ArrayList<String> lines = memberBatchProcessor.convertFiletoStrings();
 		
-		String testOutput = "A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010";
+		String testOutput = "A~Bob Hope~50 Rodeo Drive~~Limerick~0871234567";
 		
 		assertEquals(testOutput, lines.get(0).toString());
 		
@@ -52,46 +49,55 @@ public class testMemberBatchProcessor {
 	@Test
 	public void testValidateString(){
 		
-		String[] test = {"A", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "1992-05-01", "1853260010"};
-		String[] test2 = {"U", "1236", "*U"};
-		String[] test3 = {"A", "Wuthering Heights", "Emily Bronte", "05-01", "1853260010"};
-		String[] test4 = {"X", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "1992-05-01", "1853260010"};
-		String[] test5 = {"A", "Wuthering Heights", "Emily Bronte", "1992-05-01", "1853260010"};
-		String[] test6 = {"X", "Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "19920501", "1853260010"};
-		String[] test7 = {"X", "Word","Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", "19920501", "1853260010"};
-		String[] test8 = {"U", "Test", "*A"};
+		String[] test = {"A", "Bob Hope","50 Rodeo Drive","Limerick","0871234567"};
+		String[] test2 = {"U", "232","*I"};
+		String[] test3 = {"U","9332","*A"};
+		String[] test4 = {"P","543","23.50"};
+		String[] test5 = {"U","3425","Janet Leigh","22 Boreenmana Road","Ballinlough","Cork","0214444333"};
+		//Too Short
+		String[] test6 = {"Bob Hope","50 Rodeo Drive","Limerick","0871234567"};
+		//command char does not exist
+		String[] test8 = {"X", "Bob Hope","50 Rodeo Drive","Limerick","0871234567"};
+		//second command char does not exist
+		String[] test9 = {"P","543","23.50"};
+		//last element is not a double
+		String[] test10 = {"P","543","sdgsghsf"};
+
 		
-		assertTrue(memberBatchProcessor.validateStringArray(test));
-		assertTrue(memberBatchProcessor.validateStringArray(test2));
-		assertFalse(memberBatchProcessor.validateStringArray(test3));
-		assertFalse(memberBatchProcessor.validateStringArray(test4));
-		assertFalse(memberBatchProcessor.validateStringArray(test5));
-		assertFalse(memberBatchProcessor.validateStringArray(test6));
-		assertFalse(memberBatchProcessor.validateStringArray(test7));
-		assertFalse(memberBatchProcessor.validateStringArray(test8));
+		assertTrue(memberBatchProcessor.validateStringArray(test, 10));
+		assertTrue(memberBatchProcessor.validateStringArray(test2, 11));
+		assertTrue(memberBatchProcessor.validateStringArray(test3, 12));
+		assertTrue(memberBatchProcessor.validateStringArray(test4, 13));
+		assertTrue(memberBatchProcessor.validateStringArray(test5, 14));
+		assertFalse(memberBatchProcessor.validateStringArray(test6, 15));
+		assertFalse(memberBatchProcessor.validateStringArray(test8, 16));
+		assertTrue(memberBatchProcessor.validateStringArray(test9, 17));
+		assertFalse(memberBatchProcessor.validateStringArray(test10, 18));
+		
+		memberBatchProcessor.setErrorLog(new ArrayList<String>());
 		
 	}
 	
 	@Test
 	public void testChanges(){
 		memberBatchProcessor.processLines(memberBatchProcessor.convertFiletoStrings());
-		GregorianCalendar date = new GregorianCalendar(1992,05,01);
-		Book y = new Book("Wuthering Heights", "Emily Bronte", "Wordsworth Editions Ltd", 
-							"1853260010", date, true);
+		//Test member has been successfully added to database from batch file
+		Member y = new Member("Bob Hope","50 Rodeo Drive","Limerick","0871234567");
+		Member x = memberDao.findMemberByTitle("Bob Hope");
+		assertEquals(x.getName(),y.getName());
+		assertEquals(x.getAddress1(),y.getAddress1());
+		assertEquals(x.getBalance(), y.getBalance(),0);
 		
-		Book x = memberDao.findBookByTitle("Wuthering Heights");
-		assertEquals(x.getAuthor(),y.getAuthor());
-		assertEquals(x.getIsbn(),y.getIsbn());
-		assertEquals(x.getPublicationDate(),y.getPublicationDate());
-		
-		String a = memberDao.findBookByTitle("Dancing at Lughnasa").getAuthor();
-		String b = "Brian Friel";
-		
+		//Test member has been successfully added to database from batch file
+		String a = memberDao.findMemberByTitle("Janet Leigh").getName();
+		String b = "Janet Leigh";
 		assertEquals(b,a);
 		
-		assertTrue(memberDao.findBookById(3421).isAvailable());
-		assertFalse(memberDao.findBookById(1236).isAvailable());
+		//Check that the members have been made inactive/active
+		assertTrue(memberDao.findMemberById(1234).isActive());
+		assertFalse(memberDao.findMemberById(4567).isActive());
 		
+		//print reports
 		System.out.print(memberBatchProcessor.report());
 		System.out.print(memberBatchProcessor.fullReport());
 		System.out.print(memberBatchProcessor.errorLog());
