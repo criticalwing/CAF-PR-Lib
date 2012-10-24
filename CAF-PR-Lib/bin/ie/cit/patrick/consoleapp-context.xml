@@ -3,12 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<import resource="ie/cit/patrick/app-context"/>
+	<import resource="app-context.xml"/>
 
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-	    <property name="url" value="jdbc:mysql://localhost/library"/>
+	    <property name="url" value="jdbc:mysql://localhost/caf_pr"/>
 	    <property name="username" value="root"/>
 	    <property name="password" value=""/>
 	    <property name="maxActive" value="10"/>

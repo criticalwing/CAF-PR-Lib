@@ -17,5 +17,7 @@ public interface BookDao {
 	Book findBookByTitle(String Name);
 	
 	Book findBookById(int id);
+	
+	Book findBookByISBN(String ISBN);
 
 }

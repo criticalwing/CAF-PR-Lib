@@ -1,5 +1,7 @@
 package ie.cit.patrick.dao.impl;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.dao.DataAccessException;
@@ -59,16 +61,16 @@ public class JdbcMemberDao implements MemberDao {
 		} catch (DataAccessException e){
 			System.out.println(e.getMessage());
 		}
-		
-		
 	}
 
 	@Override
-	public Member findMemberByTitle(String name) {
+	public List<Member> findMemberByTitle(String name) {
+		
+		name = "%" + name + "%";
 		
 		try {
-			return jdbcTemplate.queryForObject(
-				"SELECT * FROM member WHERE name = ?", 
+			return jdbcTemplate.query(
+				"SELECT * FROM member WHERE name LIKE ?", 
 				new MemberRowMapper(), name);
 		}
 		catch (EmptyResultDataAccessException e) {

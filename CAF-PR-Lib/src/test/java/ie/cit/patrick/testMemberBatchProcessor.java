@@ -83,13 +83,13 @@ public class testMemberBatchProcessor {
 		memberBatchProcessor.processLines(memberBatchProcessor.convertFiletoStrings());
 		//Test member has been successfully added to database from batch file
 		Member y = new Member("Bob Hope","50 Rodeo Drive","Limerick","0871234567");
-		Member x = memberDao.findMemberByTitle("Bob Hope");
+		Member x = memberDao.findMemberByTitle("Bob").get(0);
 		assertEquals(x.getName(),y.getName());
 		assertEquals(x.getAddress1(),y.getAddress1());
 		assertEquals(x.getBalance(), y.getBalance(),0);
 		
 		//Test member has been successfully added to database from batch file
-		String a = memberDao.findMemberByTitle("Janet Leigh").getName();
+		String a = memberDao.findMemberByTitle("Janet Leigh").get(0).getName();
 		String b = "Janet Leigh";
 		assertEquals(b,a);
 		

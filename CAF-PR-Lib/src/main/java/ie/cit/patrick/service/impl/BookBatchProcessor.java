@@ -3,13 +3,12 @@ package ie.cit.patrick.service.impl;
 import ie.cit.patrick.Book;
 import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.service.BatchProcessor;
+import ie.cit.patrick.service.Workers;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -72,9 +71,7 @@ public class BookBatchProcessor implements BatchProcessor {
 	//Processing Methods
 	public ArrayList<String> convertFiletoStrings(){		
 		ArrayList<String> lines = new ArrayList<String>();
-		
-			try{
-				
+			try{		
 			BufferedReader reader = new BufferedReader(new FileReader(fileLocation));
 			String line;
 			while ((line = reader.readLine())!=null){
@@ -154,19 +151,19 @@ public class BookBatchProcessor implements BatchProcessor {
 		}
 		//check that if a book is to be added or updated it has the correct date format
 		if(parts.length==6){
-			if(validateDate(parts[4])==false){
+			if(Workers.validateDate(parts[4])==false){
 				errorLog.add("Line "+position+" does not contain an appropriately formatted date");
 				return false;
 			}
 		}
 		if(parts.length==7){
-			if(validateDate(parts[5])==false){
+			if(Workers.validateDate(parts[5])==false){
 				errorLog.add("Line "+position+" does not contain an appropriate first command character");
 				return false;
 			}
 		}
 		if(parts.length==3||parts.length==7){
-			if(!validateInt(parts[1])){
+			if(!Workers.validateInt(parts[1])){
 				errorLog.add("Line "+position+" does not contain an appropriately formatted id");
 				return false;
 			}
@@ -192,29 +189,7 @@ public class BookBatchProcessor implements BatchProcessor {
 		}
 		
 	}
-	private boolean validateDate(String date){
-		
-		SimpleDateFormat x = new SimpleDateFormat("yyyy-MM-dd");
-				
-		try{
-			x.parse(date);
-		} catch (ParseException e){
-			return false;			
-		}
-		return true;
 
-	}
-	private boolean validateInt(String input){
-		
-		try { 
-				Integer.parseInt(input);  
-				} 
-				catch(NumberFormatException nFE) { 
-				return false;
-				}
-		return true;
-		
-	}
 	
 	//String Outputs
 	@Override
@@ -255,23 +230,14 @@ public class BookBatchProcessor implements BatchProcessor {
 		}
 		
 		String output = "----------- REPORT -----------------\n" +
-				batchFullReport.size() + " total record" + sReturn(batchFullReport.size()) + " processed\n" +
-				booksAdded + " book" + sReturn(booksAdded) +" added\n" +
-				booksUpdated + " book" + sReturn(booksUpdated) + " updated\n" +
-				booksAvail +	" book" + sReturn(booksAvail) + " made available\n" +
-				booksUnavail + " book" + sReturn(booksUnavail) + " made unavailable\n" +
-				errors + " error" + sReturn(errors) + " found\n" +
+				batchFullReport.size() + " total record" + Workers.sReturn(batchFullReport.size()) + " processed\n" +
+				booksAdded + " book" + Workers.sReturn(booksAdded) +" added\n" +
+				booksUpdated + " book" + Workers.sReturn(booksUpdated) + " updated\n" +
+				booksAvail +	" book" + Workers.sReturn(booksAvail) + " made available\n" +
+				booksUnavail + " book" + Workers.sReturn(booksUnavail) + " made unavailable\n" +
+				errors + " error" + Workers.sReturn(errors) + " found\n" +
 						"------------------------------------\n\n";
 		return output;
-	}
-	public String sReturn(int x){
-		if(x>1||x==0){
-			return "s";
-		}
-		else{
-			return"";
-		}
-		
 	}
 	
 	
@@ -291,6 +257,7 @@ public class BookBatchProcessor implements BatchProcessor {
 		return "BookBatchProcessor [fileLocation=" + fileLocation
 				+ ", delineator=" + delineator + "]";
 	}
+
 
 
 	

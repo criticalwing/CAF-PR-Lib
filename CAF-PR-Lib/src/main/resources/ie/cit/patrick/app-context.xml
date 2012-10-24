@@ -5,8 +5,6 @@
 
 	<description>Basic Setup</description>
 
-	
-
 	<bean id="bookDao" class="ie.cit.patrick.dao.impl.JdbcBookDao">
 		<constructor-arg ref="dataSource"/>
 	</bean>

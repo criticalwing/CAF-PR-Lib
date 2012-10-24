@@ -29,7 +29,7 @@ public class testMemberDao {
 		
 		memberDao.addMember(x);
 		
-		Member y = memberDao.findMemberByTitle("Patrick Robertson");
+		Member y = memberDao.findMemberByTitle("Patrick Robertson").get(0);
 		
 		assertEquals(x.getName(), y.getName());
 		
@@ -47,13 +47,13 @@ public class testMemberDao {
 		
 		memberDao.addMember(x);
 		
-		Member y = memberDao.findMemberByTitle("Patrick Robertson");
+		Member y = memberDao.findMemberByTitle("Patrick Robertson").get(0);
 		
 		y.setContactNumber("0123456789");
 		
 		memberDao.updateMember(y);
 		
-		Member z = memberDao.findMemberByTitle("Patrick Robertson");
+		Member z = memberDao.findMemberByTitle("Patrick Robertson").get(0);
 		
 		assertEquals(z.getContactNumber(), "0123456789");
 		

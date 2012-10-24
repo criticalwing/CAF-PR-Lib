@@ -6,7 +6,7 @@
 	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/test/resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/HSQLDB/hsqldb.jar"/>
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/HSQLDB/sqltool.jar"/>
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/commons-dbcp-1.4.jar"/>
@@ -34,5 +34,8 @@
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/spring-framework-3.1.2.RELEASE/dist/org.springframework.web.portlet-3.1.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/spring-framework-3.1.2.RELEASE/dist/org.springframework.web.servlet-3.1.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/spring-framework-3.1.2.RELEASE/dist/org.springframework.web.struts-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/aspectj-1.7.1.jar"/>
+	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/aspectjrt-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/aspectjweaver-1.5.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

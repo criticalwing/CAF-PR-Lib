@@ -1,5 +1,7 @@
 package ie.cit.patrick.dao;
 
+import java.util.List;
+
 import ie.cit.patrick.Member;
 
 public interface MemberDao {
@@ -10,7 +12,7 @@ public interface MemberDao {
 	
 	void deleteMember(Member member);
 	
-	Member findMemberByTitle(String Name);
+	List<Member> findMemberByTitle(String Name);
 	
 	Member findMemberById(int id);
 	

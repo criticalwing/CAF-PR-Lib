@@ -4,8 +4,8 @@
 import ie.cit.patrick.Member;
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.service.BatchProcessor;
-
-	import java.io.BufferedReader;
+import ie.cit.patrick.service.Workers;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -65,9 +65,7 @@ public class MemberBatchProcessor implements BatchProcessor {
 		public void setErrorLog(ArrayList<String> errorLog) {
 			this.errorLog = errorLog;
 		}
-		
-		
-		
+
 		//Processing Methods
 		public ArrayList<String> convertFiletoStrings(){		
 			ArrayList<String> lines = new ArrayList<String>();
@@ -212,17 +210,17 @@ public class MemberBatchProcessor implements BatchProcessor {
 			}
 			//check that the id is an int and exists
 			if(parts.length==3||parts.length==7){
-				if(validateInt(parts[1])==false){
+				if(Workers.validateInt(parts[1])==false){
 					errorLog.add("Line "+position+" does not contain a valid integer for referencing the member id");
 					return false;
 				}
-				if(!validateId(Integer.parseInt(parts[1]))){
+				if(!validateMemberId(Integer.parseInt(parts[1]))){
 					errorLog.add("Line "+position+" Member: " + parts[1] + " does not exist");
 					return false;
 				}
 			}
 			if(parts[0].equals("P")&&parts.length==3){
-				if(!validateDouble(parts[2])){
+				if(!Workers.validateDouble(parts[2])){
 					errorLog.add("Line "+position+" marked for payment does not contain a valid amount");
 					return false;
 				}
@@ -231,40 +229,18 @@ public class MemberBatchProcessor implements BatchProcessor {
 			return true;
 			
 		}
-		private boolean validateId(int id){
+		
+		private boolean validateMemberId(int id){
+			
 			try{
-				if(MemberDao.findMemberById(id).getName()==null){
-				return false;}
-				else{
-					return true;
-				}
-			} catch(NullPointerException nPE){
+				MemberDao.findMemberById(id).getName();
+				} catch(NullPointerException nPE){
 				return false;
-			}
-			
-		}
-		private boolean validateInt(String input){
-			
-			try { 
-					Integer.parseInt(input);  
-					} 
-					catch(NumberFormatException nFE) { 
-					return false;
-					}
+				
+				}
 			return true;
-			
 		}
-		private boolean validateDouble(String input){
-			
-			try { 
-					Double.parseDouble(input);  
-					} 
-					catch(NumberFormatException nFE) { 
-					return false;
-					}
-			return true;
-			
-		}
+
 		
 		//String Outputs
 		@Override
@@ -309,26 +285,17 @@ public class MemberBatchProcessor implements BatchProcessor {
 			}
 			
 			String output = "----------- REPORT -----------------\n" +
-					batchFullReport.size() + " total record" + sReturn(batchFullReport.size()) + " processed\n" +
-					membersAdded + " member" + sReturn(membersAdded) +" added\n" +
-					membersUpdated + " member" + sReturn(membersUpdated) + " updated\n" +
-					membersAvail +	" member" + sReturn(membersAvail) + " made active\n" +
-					membersUnavail + " member" + sReturn(membersUnavail) + " made inactive\n" +
-					paymentsMade + " payment" + sReturn(paymentsMade) + " made\n" +
-					errors + " error" + sReturn(errors) + " found" +
+					batchFullReport.size() + " total record" + Workers.sReturn(batchFullReport.size()) + " processed\n" +
+					membersAdded + " member" + Workers.sReturn(membersAdded) +" added\n" +
+					membersUpdated + " member" + Workers.sReturn(membersUpdated) + " updated\n" +
+					membersAvail +	" member" + Workers.sReturn(membersAvail) + " made active\n" +
+					membersUnavail + " member" + Workers.sReturn(membersUnavail) + " made inactive\n" +
+					paymentsMade + " payment" + Workers.sReturn(paymentsMade) + " made\n" +
+					errors + " error" + Workers.sReturn(errors) + " found" +
 							"\n------------------------------------\n\n";
 			return output;
 		}
-		public String sReturn(int x){
-			if(x>1||x==0){
-				return "s";
-			}
-			else{
-				return"";
-			}
-			
-		}
-		
+
 		
 		public String errorLog() {
 			String output = "\n------------ ERROR LOG ----------------\n";;

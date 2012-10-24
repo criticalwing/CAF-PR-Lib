@@ -134,4 +134,18 @@ public class JdbcBookDao implements BookDao{
 		
 	}
 
+	
+	public Book findBookByISBN(String ISBN) {
+		
+		try {
+			return jdbcTemplate.queryForObject(
+				"SELECT * FROM book WHERE isbn = ?", 
+				new BookRowMapper(), ISBN);
+		}
+		catch (EmptyResultDataAccessException e) {
+			return null;
+		}		
+
+	}
+
 }
