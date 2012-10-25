@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="app-context.xml"/>
+	
+	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
+		<constructor-arg name="bookDao" ref="bookDao"/>
+		<constructor-arg name="fileLocation" value="src/main/resources/bookbatchFile"/>
+		<constructor-arg name="delineator" value="~"/>	
+	</bean>
+	
+	<bean id="memberBatchProcessor" class="ie.cit.patrick.service.impl.MemberBatchProcessor">
+		<constructor-arg name="memberdao" ref="memberDao"/>
+		<constructor-arg name="fileLocation" value="src/main/resources/memberbatchFile"/>
+		<constructor-arg name="delineator" value="~"/>	
+	</bean>
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://localhost/caf_pr"/>
+	    <property name="username" value="root"/>
+	    <property name="password" value=""/>
+	    <property name="maxActive" value="10"/>
+	    <property name="initialSize" value="3" />
+	</bean>
+
+
+</beans>
+

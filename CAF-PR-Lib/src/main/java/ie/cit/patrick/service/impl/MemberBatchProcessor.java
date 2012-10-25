@@ -33,6 +33,14 @@ public class MemberBatchProcessor implements BatchProcessor {
 			batchFullReport =new ArrayList<String>();
 			errorLog = new ArrayList<String>();
 		}
+		//if it is to be used as static this allows Dao to be set
+		public MemberBatchProcessor(MemberDao memberdao, String fileLocation, String delineator) {
+			this.MemberDao = memberdao;
+			this.fileLocation = fileLocation;
+			this.delineator = delineator;
+			batchFullReport =new ArrayList<String>();
+			errorLog = new ArrayList<String>();
+		}
 		
 		//Getter & Setters
 		public String getFileLocation() {

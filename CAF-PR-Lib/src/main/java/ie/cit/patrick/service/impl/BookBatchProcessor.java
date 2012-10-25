@@ -35,6 +35,14 @@ public class BookBatchProcessor implements BatchProcessor {
 		batchFullReport =new ArrayList<String>();
 		errorLog = new ArrayList<String>();
 	}
+	//if it is to be used as static this allows Dao to be set
+	public BookBatchProcessor(BookDao bookDao, String fileLocation, String delineator) {
+		this.bookDao = bookDao;
+		this.fileLocation = fileLocation;
+		this.delineator = delineator;
+		batchFullReport =new ArrayList<String>();
+		errorLog = new ArrayList<String>();
+	}
 	
 	//Getter & Setters
 	public String getFileLocation() {

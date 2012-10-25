@@ -10,6 +10,7 @@
 		<config>src/test/resources/ie/cit/patrick/test-context.xml</config>
 		<config>src/main/resources/ie/cit/patrick/consoleapp-context.xml</config>
 		<config>src/main/resources/ie/cit/patrick/aspects-config.xml</config>
+		<config>src/main/resources/ie/cit/patrick/batchApp-context.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
