@@ -12,5 +12,15 @@
 	<bean id="memberDao" class="ie.cit.patrick.dao.impl.JdbcMemberDao">
 		<constructor-arg ref="dataSource"/>
 	</bean>	
+	
+	<bean id="memberLoansBookDao" class="ie.cit.patrick.dao.impl.JdbcMemberLoansBookDao">
+		<constructor-arg ref="dataSource"/>
+	</bean>
+	
+	<bean id="libraryService" class="ie.cit.patrick.service.impl.LibraryServiceImpl">
+		<constructor-arg ref="memberDao"/>
+		<constructor-arg ref="bookDao"/>
+		<constructor-arg ref="memberLoansBookDao"/>
+	</bean>	
 
 </beans>

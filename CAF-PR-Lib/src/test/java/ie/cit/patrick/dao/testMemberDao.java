@@ -1,6 +1,7 @@
-package ie.cit.patrick;
+package ie.cit.patrick.dao;
 
 import static org.junit.Assert.*;
+import ie.cit.patrick.Member;
 import ie.cit.patrick.dao.MemberDao;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,9 +34,11 @@ public class testMemberDao {
 		
 		assertEquals(x.getName(), y.getName());
 		
-		memberDao.deleteMember(y);
+		int id = y.getId();
 		
-		assertNull(memberDao.findMemberByTitle("Patrick Robertson"));
+		memberDao.deleteMember(id);
+				
+		assertNull(memberDao.findMemberById(id));
 		
 		
 	}
@@ -57,9 +60,11 @@ public class testMemberDao {
 		
 		assertEquals(z.getContactNumber(), "0123456789");
 		
-		memberDao.deleteMember(z);
+		int id = z.getId();
 		
-		assertNull(memberDao.findMemberByTitle("Patrick Robertson"));
+		memberDao.deleteMember(id);
+		
+		assertNull(memberDao.findMemberById(id));
 		
 		
 	}

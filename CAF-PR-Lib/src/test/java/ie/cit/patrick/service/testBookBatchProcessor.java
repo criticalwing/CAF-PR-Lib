@@ -1,10 +1,11 @@
-package ie.cit.patrick;
+package ie.cit.patrick.service;
 
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+import ie.cit.patrick.Book;
 import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.service.impl.BookBatchProcessor;
 

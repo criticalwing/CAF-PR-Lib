@@ -8,7 +8,7 @@ public interface BookDao {
 	
 	void updateBook(Book book);
 	
-	void deleteBook(Book book);
+	void deleteBook(int bookId);
 	
 	void makeBookUnavailable(int id);
 	

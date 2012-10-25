@@ -1,8 +1,8 @@
-package ie.cit.patrick;
+package ie.cit.patrick.service;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
+import java.text.ParseException;
 
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.service.Workers;
@@ -75,5 +75,14 @@ public class testWorkerMethods {
 		assertFalse(Workers.validateDate("abcd"));
 
 	}
-	
+	@Test
+	public void testDaysBetween(){
+		
+		int x = 0;
+		x = Workers.daysBetween("2012-10-05", "2012-10-10");
+		
+		assertEquals(5,x,0);
+		
+		
+	}
 }

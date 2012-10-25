@@ -1,8 +1,6 @@
 package ie.cit.patrick.consoleapp;
 
-import ie.cit.patrick.Member;
-import ie.cit.patrick.dao.BookDao;
-import ie.cit.patrick.dao.MemberDao;
+import ie.cit.patrick.service.LibraryService;
 import ie.cit.patrick.service.Workers;
 import java.util.Scanner;
 
@@ -13,14 +11,12 @@ public class consoleApp {
 	
 	static ApplicationContext context;
 	static Scanner keys = new Scanner(System.in);
-	static MemberDao memberDao;
-	static BookDao bookDao;
+	static LibraryService lS;
 
 	public static void main(String[] args) {
 		
 		context = new ClassPathXmlApplicationContext("classpath:ie/cit/patrick/consoleapp-context.xml");
-		memberDao = (MemberDao)context.getBean("memberDao");
-		bookDao = (BookDao)context.getBean("bookDao");
+		lS = (LibraryService)context.getBean("libraryService");
 		runMenu();
 
 	}
@@ -43,31 +39,34 @@ public class consoleApp {
 	private static boolean handleChoice(String choice) {
 
 		choice = choice.toUpperCase();
-		int MemberId;
+		int memberId;
 		String input = "";
 		switch(choice){
 			
-		case "A": 	MemberId = getID();
-						do {
-							Member current = memberDao.findMemberById(MemberId);
-							System.out.print("\n### Member: " + current.getName() + " ###");
-							System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookIDtype")));
-							input = keys.next();
-							if (!loanBook(input, MemberId)) {
-								System.out.println("\nPlease choose a correct option (A,B, or X)");
-							}
-						} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, MemberId));				
+		case "A": 	memberId = getID();
+					if(lS.memberActive(memberId)){
+							do {
+								System.out.print("\n### Member: " + lS.memberNamefromID(memberId) + " ###");
+								System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookLoan")));
+								input = keys.next();
+								if (!loanBook(input, memberId)) {
+									System.out.println("\nPlease choose a correct option (A,B, or X)");
+								}
+							} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, memberId));
+					} else{
+						System.out.print("\n### NO LOANS POSSIBLE Member: " + lS.memberNamefromID(memberId) + " : STATUS INACTIVE ###\n");
+						return true;
+					}
 					break;
-		case "B": 	MemberId = getID();
+		case "B": 	memberId = getID();
 					do {
-						Member current = memberDao.findMemberById(MemberId);
-						System.out.print("\n### Member: " + current.getName() + " ###");
-						System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookIDtype")));
+						System.out.print("\n### Member: " + lS.memberNamefromID(memberId) + " ###");
+						System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookReturn")));
 						input = keys.next();
-						if (!loanBook(input, MemberId)) {
+						if (!returnBook(input, memberId)) {
 							System.out.println("\nPlease choose a correct option (A,B, or X)");
 						}
-					} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, MemberId));				
+					} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, memberId));				
 					break;
 		case "x": 	break;
 		case "X":	break;
@@ -82,11 +81,25 @@ public class consoleApp {
 		input = input.toUpperCase();
 		switch(input){
 		
-		case "A": 	System.out.print("Book: " + "\"" + bookDao.findBookById(getBookID()).getTitle()
-										+ "\"" + " loaned to " + memberDao.findMemberById(memberID).getName() + "\n");
+		case "A": 	int bookId = getBookID();
+					if(lS.checkBookAvailable(bookId)){
+					lS.loanBook(memberID, bookId);
+					System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+										+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
+					}else{
+						System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+								+ "\"" + " is already loaned out to another member\n");
+					}
 					break;
-		case "B":  	System.out.print("Book: " + "\"" + bookDao.findBookByISBN(getBookISBN()).getTitle()
-										+ "\"" + " loaned to " + memberDao.findMemberById(memberID).getName() + "\n");
+		case "B":  	String bookISBN = getBookISBN();
+					if(lS.checkBookAvailable(bookISBN)){
+					lS.loanBook(memberID, bookISBN);
+					System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
+										+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
+					}else{
+						System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
+								+ "\"" + " is already loaned out to another member\n");
+					}
 					break;
 		case "x": 	break;
 		case "X":	break;
@@ -94,7 +107,46 @@ public class consoleApp {
 		}
 		return true;
 	}
-	
+
+	private static boolean returnBook(String input, int memberID){
+		
+		input = input.toUpperCase();
+		switch(input){
+		
+		case "A": 	int bookId = getBookID();
+					if(!lS.checkBookAvailable(bookId)){
+							if(!lS.returnBook(memberID, bookId)){
+								System.out.print("Error, Book: " + "\"" + lS.bookNamefromID(bookId)
+										+ "\"" + " is not loaned out to "+lS.memberNamefromID(memberID) +"\n");
+							}else{
+							System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+												+ "\"" + " returned\n");
+							}
+					}else{
+						System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+								+ "\"" + " has already been returned\n");
+					}
+					break;
+		case "B":  	String bookISBN = getBookISBN();
+					if(!lS.checkBookAvailable(bookISBN)){
+						if(!lS.returnBook(memberID, bookISBN)){
+							System.out.print("Error, Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
+									+ "\"" + " is not loaned out to "+lS.memberNamefromID(memberID) +"\n");
+						}else{
+						System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
+											+ "\"" + " returned\n");
+						}
+					}else{
+						System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
+								+ "\"" + " has already been returned\n");
+					}
+					break;
+		case "x": 	break;
+		case "X":	break;
+		default: 	return false;
+		}
+		return true;
+	}
 	
 	//collect and validate Member ID
  	private static int getID(){
@@ -107,22 +159,12 @@ public class consoleApp {
 					if(Workers.validateInt(tempId)){
 						id = Integer.parseInt(tempId);
 					}
-					if(!validateMemberId(id)){
+					if(!lS.validateMemberId(id)){
 						System.out.print("ERROR, No Member exists with id No:" + id);
 					}
-			}while(!validateMemberId(id));
+			}while(!lS.validateMemberId(id));
 		
 			return id;
-	}
-	public static boolean validateMemberId(int id){
-		
-		try{
-			memberDao.findMemberById(id).getName();
-			} catch(NullPointerException nPE){
-			return false;
-			
-			}
-		return true;
 	}
 	
 	//collect and validate Book ID
@@ -136,49 +178,29 @@ public class consoleApp {
 				if(Workers.validateInt(tempId)){
 					id = Integer.parseInt(tempId);
 				}
-				if(!validateBookId(id)){
-					System.out.print("ERROR, No book exists with id No:" + id);
+				if(!lS.validateBookId(id)){
+					System.out.print("ERROR, No book available with id No:" + id);
 				}
-		}while(!validateBookId(id));
+		}while(!lS.validateBookId(id));
 	
 		return id;
 }
-	private static boolean validateBookId(int id){
-	
-		try{
-			bookDao.findBookById(id).getAuthor();
-			} catch(NullPointerException nPE){
-			return false;
-			
-			}
-		return true;
 
-}
 
-	//collect and validate Book ID
+	//collect and validate Book ISBN
 	private static String getBookISBN(){
 		
 		String ISBN="";
 		do{
 			System.out.print("\nPlease enter book ISBN ==>\n");
 			ISBN=keys.next();
-				if(!validateBookISBN(ISBN)){
+				if(!lS.validateBookISBN(ISBN)){
 					System.out.print("ERROR, No book exists with ISBN:" + ISBN);
 				}
-		}while(!validateBookISBN(ISBN));
+		}while(!lS.validateBookISBN(ISBN));
 	
 		return ISBN;
 }
-	private static boolean validateBookISBN(String ISBN){
-	
-		try{
-			bookDao.findBookByISBN(ISBN).getAuthor();
-			} catch(NullPointerException nPE){
-			return false;
-			
-			}
-		return true;
 
-}
 
 }

@@ -1,8 +1,10 @@
-package ie.cit.patrick;
+package ie.cit.patrick.service;
 
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+
+import ie.cit.patrick.Member;
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.service.impl.MemberBatchProcessor;
 

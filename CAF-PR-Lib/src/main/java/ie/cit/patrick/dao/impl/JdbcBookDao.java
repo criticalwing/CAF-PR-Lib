@@ -57,12 +57,12 @@ public class JdbcBookDao implements BookDao{
 		}
 	}
 
-	public void deleteBook(Book book) {
+	public void deleteBook(int bookId) {
 		
 		String sql = "DELETE FROM book WHERE id = ?";
 		
 		try{
-		jdbcTemplate.update(sql, book.getId());
+		jdbcTemplate.update(sql, bookId);
 		} catch (DataAccessException e){
 			System.out.println(e.getMessage());
 		}

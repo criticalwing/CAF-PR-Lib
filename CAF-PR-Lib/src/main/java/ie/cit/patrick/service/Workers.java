@@ -4,9 +4,14 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 public class Workers {
 	
@@ -80,15 +85,42 @@ public class Workers {
 				
 		try{
 			x.parse(date);
-			System.out.print(date);
 		} catch (ParseException e){
 			return false;			
 		}
 		return true;
 
 	}
-	
+	public static String dateReturn(int weeks){
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar now = Calendar.getInstance();
+		now.add(Calendar.WEEK_OF_YEAR, weeks);
+		return (dateFormat.format(now.getTime()));
 
+	}
+	
+	public static int daysBetween(String startDate, String endDate) {  
+			SimpleDateFormat x = new SimpleDateFormat("yyyy-MM-dd");
+
+			Calendar start = new GregorianCalendar();
+			Calendar end = new GregorianCalendar();
+			
+			if(validateDate(startDate)&&validateDate(endDate)){
+				try{
+					start.setTime(x.parse(startDate));
+				}catch(ParseException pE){
+					pE.printStackTrace();
+				}
+				try{
+					end.setTime(x.parse(endDate));
+				}catch(ParseException pE){
+					pE.printStackTrace();
+				}
+				return (int)((end.getTimeInMillis()-start.getTimeInMillis()) / (1000 * 60 * 60 * 24));
+			} else{
+					return -1;
+		}  
+		}
 	
 	
 	

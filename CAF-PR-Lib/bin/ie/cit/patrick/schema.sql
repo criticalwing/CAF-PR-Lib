@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS Member_loans_Book (
     Member_id integer NOT NULL,
     Book_id integer NOT NULL,
     loan_date DATE NOT NULL,
-    return_date DATE NULL,
+    return_date DATE DEFAULT NULL NULL,
     fine DOUBLE DEFAULT 0.00,
     PRIMARY KEY (Member_id, Book_id, loan_date),
         

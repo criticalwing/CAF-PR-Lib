@@ -1,6 +1,7 @@
-package ie.cit.patrick;
+package ie.cit.patrick.dao;
 
 import static org.junit.Assert.*;
+import ie.cit.patrick.Book;
 import ie.cit.patrick.dao.BookDao;
 import java.util.GregorianCalendar;
 import org.junit.Before;
@@ -57,7 +58,7 @@ public class testBookDao {
 		
 		Book y = bookDao.findBookByTitle("Foucalts Pendulum");
 		
-		bookDao.deleteBook(y);
+		bookDao.deleteBook(y.getId());
 		
 		assertNull(bookDao.findBookByTitle("Foucalts Pendulum"));
 		

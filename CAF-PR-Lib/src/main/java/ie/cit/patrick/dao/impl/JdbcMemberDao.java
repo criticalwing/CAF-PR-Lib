@@ -52,12 +52,12 @@ public class JdbcMemberDao implements MemberDao {
 		
 	}
 
-	public void deleteMember(Member member) {
+	public void deleteMember(int memberId) {
 		
 		String sql = "DELETE FROM member WHERE id = ?";
 		
 		try{
-		jdbcTemplate.update(sql, member.getId());
+		jdbcTemplate.update(sql, memberId);
 		} catch (DataAccessException e){
 			System.out.println(e.getMessage());
 		}

@@ -10,7 +10,7 @@ public interface MemberDao {
 	
 	void updateMember(Member member);
 	
-	void deleteMember(Member member);
+	void deleteMember(int memberId);
 	
 	List<Member> findMemberByTitle(String Name);
 	
