@@ -118,11 +118,9 @@ public class Member {
 	
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", bookAllowance=" + bookAllowance
-				+ ", name=" + name + ", address1=" + address1 + ", address2="
-				+ address2 + ", town=" + town + ", contactNumber="
-				+ contactNumber + ", balance=" + balance + ", active=" + active
-				+ "]";
+		return "Member [ " + id + ", " + name + ", " + address1 + ", " 
+				+ address2 + ", " + town + ", "	+ contactNumber + ", Balance= Û" 
+				+ balance + " ]";
 	}
 
 	

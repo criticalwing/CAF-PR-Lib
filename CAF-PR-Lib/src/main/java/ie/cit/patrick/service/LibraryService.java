@@ -31,4 +31,15 @@ public interface LibraryService {
 	boolean memberActive(int memberId);
 	
 	int checkWhoLoanedBook(int bookId);
+
+	String getMembersWithFines(int memberId);
+
+	String getMembersWithFines();
+
+	boolean validateMemberName(String name);
+
+	String getMembersWithFines(String memberName);
+
+	boolean checkBookAllowance(int memberId);
+
 }

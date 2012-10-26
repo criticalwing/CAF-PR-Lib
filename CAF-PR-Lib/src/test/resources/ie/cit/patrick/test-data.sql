@@ -3,13 +3,13 @@ VALUES ('3421','Raspberry Pi User Guide', 'Eben Upton', 'John Wiley & Sons', '20
 INSERT INTO book (id,title,author,publisher,publication_date,isbn,available) 
 VALUES ('1236','HTML & CSS: Design and Build Web Sites', 'Jon Duckett', 'John Wiley & Sons', '2011-11-18', '123456789B',true);
 INSERT INTO book (id,title,author,publisher,publication_date,isbn) 
-VALUES ('627','Python Programming for the Absolute Beginner', 'Mike Dawson', 'Course Technology PTR', '2010-01-30', '1435455002');
+VALUES ('627','Python Programming for the Absolute Beginner', 'Mike Dawson', 'Course Technology PTR', '2010-01-30', '1435445002');
 INSERT INTO book (id,title,author,publisher,publication_date,isbn) 
 VALUES ('835','Digital Marketing Strategy Implementation and Practice', 'Dave Chaffey', 'Pearson', '2012-07-12', '0273746103');
 INSERT INTO book (id,title,author,publisher,publication_date,isbn, available) 
 VALUES ('4454','Dancing at Lughnasa', 'A N Other', 'Faber and Faber', '2012-07-12', '0571144799', false);
 INSERT INTO book (id,title,author,publisher,publication_date,isbn, available) 
-VALUES ('746','Best Story ever', 'A N Other', 'publisher.com', '2012-07-12', '0571144799', true);
+VALUES ('746','Best Story ever', 'A N Other', 'publisher.com', '2012-07-12', '0571144899', true);
 
 INSERT INTO Member (id, name,address1,address2,town,contact_number,balance, active) 
 VALUES ('1234','Bertie Ahern', 'Big House', 'Rich Street', 'Dublin', '018001231235','1500.00', true);

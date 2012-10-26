@@ -2,12 +2,12 @@ package ie.cit.patrick.dao.impl;
 
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-
 
 import ie.cit.patrick.MemberLoansBook;
 import ie.cit.patrick.dao.MemberLoansBookDao;
@@ -100,6 +100,20 @@ public class JdbcMemberLoansBookDao implements MemberLoansBookDao{
 			}
 			//doubles give crazy results, damn floating points
 		return fine/100;
+	}
+
+	@Override
+	public List<MemberLoansBook> findCurrentLoansByMemberId(int memberId) {
+		
+		String sql = "SELECT * FROM Member_loans_Book WHERE Member_id = ? AND return_date IS NULL";
+		
+		try{
+		return jdbcTemplate.query(sql, new MemberLoansBookRowMapper(), memberId);
+		} catch (DataAccessException e){
+			System.out.println("Error finding loan " +e.getMessage());
+		}
+		return null;
+
 	}
 
 

@@ -22,7 +22,6 @@ public class LibraryServiceImpl implements LibraryService {
 		this.memberLoansBookDao = memberLoansBookDao;
 	}
 
-
 	@Override
 	public boolean loanBook(int memberId, int bookId) {
 		
@@ -107,7 +106,6 @@ public class LibraryServiceImpl implements LibraryService {
 		
 	}
 
-	
 	@Override
  	public boolean validateBookId(int id) {
 		
@@ -134,7 +132,6 @@ public class LibraryServiceImpl implements LibraryService {
 		return true;
 	}
 
-
 	@Override
 	public String memberNamefromID(int id) {
 		
@@ -147,7 +144,6 @@ public class LibraryServiceImpl implements LibraryService {
 		return bookDao.findBookById(id).getTitle();
 	}
 
-	
 	@Override
 	public String bookNamefromISBN(String ISBN) {
 		
@@ -165,20 +161,101 @@ public class LibraryServiceImpl implements LibraryService {
 	}
 	
 	public boolean checkBookAvailable(String bookISBN){
-		
+		try{
 		if(bookDao.findBookByISBN(bookISBN).isAvailable()){
 			return true;
 		}
 		else{		
 		return false;
 		}
+		}catch(NullPointerException nPE){
+			return false;
+		}
 	}
 
 	public int checkWhoLoanedBook(int bookId){
+		int memberId = 0;
 		
-		int memberId = memberLoansBookDao.findLoanedBookByID(bookId).getMemberID();
-		
+		try{
+		memberId = memberLoansBookDao.findLoanedBookByID(bookId).getMemberID();
+		}catch(NullPointerException nPE){
+			return memberId;			
+		}
 		return memberId;
 		
+	}
+	
+	@Override
+	public String getMembersWithFines() {
+		double total = 0;
+		String output="\n\n###### All Members With Fines #####\n\n";
+		try{
+		for(Member member : memberDao.allMembersWithFines()){
+			
+			output = output + member.toString() + "\n";
+			total = total + member.getBalance();
+			
+		}}catch (NullPointerException nPE){
+			
+			output = output + "\n\n All Members currently have a balance of zero \n\n";
+
+			
+		}
+		
+		output = output + "\n###### TOTAL FINES OUTSTANDING = Û" + total + " #####\n\n";
+		
+		return output;
+	}
+	
+	@Override
+	public String getMembersWithFines(int memberId) {
+		String output="";
+		if(memberDao.MembersWithFines(memberId).isEmpty()){
+			output = "\n### Member "+ memberId + " currently has no outstanding fines.\n\n";
+		}else {for(Member member : memberDao.MembersWithFines(memberId)){
+			
+			output = output + member.toString() + "\n";
+			
+		}
+		}
+		return output;
+	}
+	
+	@Override
+	public boolean validateMemberName(String name) {
+		
+		try{
+			memberDao.findMemberByTitle(name).get(0);
+			} catch(IndexOutOfBoundsException iOOBE){
+			return false;
+			
+			}
+		return true;
+	}
+	
+	@Override
+	public String getMembersWithFines(String memberName) {
+		String output="";
+		if(memberDao.MembersWithFines(memberName).isEmpty()){
+			output = "\n### All Members named "+ memberName + " currently have no outstanding fines.\n\n";
+		}else{
+			for(Member member : memberDao.MembersWithFines(memberName)){
+				
+				output = output + member.toString() + "\n";
+				
+			}
+		}
+		return output;
+	}
+	
+	@Override
+	public boolean checkBookAllowance(int memberId) {
+		
+		if(memberDao.findMemberById(memberId).getBookAllowance()<=
+				memberLoansBookDao.findCurrentLoansByMemberId(memberId).size()){
+			return false;			
+		}		
+		
+		return true;
 	}
 }

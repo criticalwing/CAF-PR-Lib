@@ -2,8 +2,6 @@ package ie.cit.patrick.service;
 
 import static org.junit.Assert.*;
 
-import java.text.ParseException;
-
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.service.Workers;
 

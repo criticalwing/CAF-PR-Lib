@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 import ie.cit.patrick.MemberLoansBook;
@@ -61,8 +60,8 @@ public class testMemberLoansBookDao {
 	}
 	@Test
 	public void testCalculateFine(){
-		
-		double x = 3.10;
+		//TODO add in that the return fine is based on todays date
+		double x = 3.15;
 		double y = memberLoansBookDao.calculateFine(9332, 835);
 		
 		assertEquals(x,y,0);
@@ -71,13 +70,14 @@ public class testMemberLoansBookDao {
 
 	@Test
 	public void testReturnBook2() throws ParseException{
+		//TODO add in that the return fine is based on todays date
 		memberLoansBookDao.returnBook(835, 9332);
 		MemberLoansBook x = memberLoansBookDao.findByBookIDandMemberID(9332, 835);
 		String d = df.format(x.getLoan_date().getTime());
 		Calendar cal = new GregorianCalendar();
 		df.setCalendar(cal);
 		double fine = x.getFine();	
-		double cFine = ((Workers.daysBetween("2012-08-10", "2012-10-25")*5)-70);
+		double cFine = ((Workers.daysBetween("2012-08-10", "2012-10-26")*5)-70);
 		
 		assertEquals(fine,cFine/100,0);
 		assertEquals(d,"10/08/2012");

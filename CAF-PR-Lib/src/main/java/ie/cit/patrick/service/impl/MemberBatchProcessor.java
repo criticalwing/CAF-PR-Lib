@@ -185,7 +185,8 @@ public class MemberBatchProcessor implements BatchProcessor {
 				Member payment = MemberDao.findMemberById(Integer.parseInt(parts[1]));
 				double amount = Double.parseDouble(parts[2]);
 				if((payment.getBalance()-amount)<0){
-					batchFullReport.add("Over Payment, Member: " + parts[1] + " is due a refund of Û" + (amount-payment.getBalance()) +". Û"+ amount + 
+					batchFullReport.add("Over Payment of Û" + (amount-payment.getBalance()) +" see Error Log for details");
+					errorLog.add("Over Payment, Member: " + parts[1] + " is due a refund of Û" + (amount-payment.getBalance()) +". Û"+ amount + 
 							" paid on a balance of Û"+ payment.getBalance() + ", Balance now set to zero");
 					payment.setBalance(0);
 					MemberDao.updateMember(payment);

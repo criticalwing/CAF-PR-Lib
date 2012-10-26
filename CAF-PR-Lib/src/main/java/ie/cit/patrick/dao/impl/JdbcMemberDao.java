@@ -98,6 +98,48 @@ public class JdbcMemberDao implements MemberDao {
 		
 		
 	}
+
+	@Override
+	public List<Member> allMembersWithFines() {
+
+		try {
+			return jdbcTemplate.query(
+				"SELECT * FROM member WHERE balance > 0", 
+				new MemberRowMapper());
+		}
+		catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
+
+	@Override
+	public List<Member> MembersWithFines(int memberId) {
+				
+		try {
+			return jdbcTemplate.query(
+				"SELECT * FROM member WHERE id = ? AND balance>0", 
+				new MemberRowMapper(), memberId);
+		}
+		catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
+
+	@Override
+	public List<Member> MembersWithFines(String memberName) {
 		
+		memberName = "%" + memberName + "%";
+		
+		
+		try {
+			return jdbcTemplate.query(
+				"SELECT * FROM member WHERE name LIKE ? AND balance>0", 
+				new MemberRowMapper(), memberName);
+		}
+		catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
 }
+		
 

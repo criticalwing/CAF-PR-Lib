@@ -2,11 +2,9 @@ package ie.cit.patrick.consoleapp;
 
 import java.util.Scanner;
 
-import ie.cit.patrick.Member;
 import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.service.BatchProcessor;
-import ie.cit.patrick.service.LibraryService;
 import ie.cit.patrick.service.Workers;
 
 import org.springframework.context.ApplicationContext;

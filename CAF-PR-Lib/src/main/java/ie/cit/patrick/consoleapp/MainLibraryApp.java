@@ -7,7 +7,7 @@ import java.util.Scanner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class consoleApp {
+public class MainLibraryApp {
 	
 	static ApplicationContext context;
 	static Scanner keys = new Scanner(System.in);
@@ -44,17 +44,23 @@ public class consoleApp {
 		switch(choice){
 			
 		case "A": 	memberId = getID();
-					if(lS.memberActive(memberId)){
-							do {
-								System.out.print("\n### Member: " + lS.memberNamefromID(memberId) + " ###");
-								System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookLoan")));
-								input = keys.next();
-								if (!loanBook(input, memberId)) {
-									System.out.println("\nPlease choose a correct option (A,B, or X)");
-								}
-							} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, memberId));
+					if(lS.checkBookAllowance(memberId)){
+							if(lS.memberActive(memberId)){
+									do {
+										System.out.print("\n### Member: " + lS.memberNamefromID(memberId) + " ###");
+										System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookLoan")));
+										input = keys.next();
+										if (!loanBook(input, memberId)) {
+											System.out.println("\nPlease choose a correct option (A,B, or X)");
+										}
+									//check if user has press x to return to previous screen
+									} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, memberId));
+							} else{
+								System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberId) + " : STATUS INACTIVE ###\n");
+								return true;
+							}
 					} else{
-						System.out.print("\n### NO LOANS POSSIBLE Member: " + lS.memberNamefromID(memberId) + " : STATUS INACTIVE ###\n");
+						System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberId) + " : ALREADY HAS FULL MAX BOOKS LOANED ###\n");
 						return true;
 					}
 					break;
@@ -80,25 +86,46 @@ public class consoleApp {
 		
 		input = input.toUpperCase();
 		switch(input){
-		
-		case "A": 	int bookId = getBookID();
-					if(lS.checkBookAvailable(bookId)){
-					lS.loanBook(memberID, bookId);
-					System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
-										+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
+					//check if book is loaned to see if max allowance reached
+		case "A": 	if(lS.checkBookAllowance(memberID)){
+							int bookId = getBookID();
+							if(lS.checkBookAvailable(bookId)){
+								lS.loanBook(memberID, bookId);
+								System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+													+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
+									//complete check after book is loaned to see if max allowance reached
+									if(!lS.checkBookAllowance(memberID)){
+										System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : NOW HAS MAX BOOKS LOANED ###\n");
+										return true;									
+									}
+								}else{
+									System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+											+ "\"" + " is unavailable\n");
+								}
 					}else{
-						System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
-								+ "\"" + " is already loaned out to another member\n");
+						System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : NOW HAS MAX BOOKS LOANED ###\n");
+						return true;
 					}
 					break;
-		case "B":  	String bookISBN = getBookISBN();
-					if(lS.checkBookAvailable(bookISBN)){
-					lS.loanBook(memberID, bookISBN);
-					System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
-										+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
+					//check if book is loaned to see if max allowance reached
+		case "B":  	if(lS.checkBookAllowance(memberID)){
+							String bookISBN = getBookISBN();
+							if(lS.checkBookAvailable(bookISBN)){
+							lS.loanBook(memberID, bookISBN);
+							System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
+												+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
+								//complete check after book is loaned to see if max allowance reached
+								if(!lS.checkBookAllowance(memberID)){
+									System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : ALREADY HAS FULL MAX BOOKS LOANED ###\n");
+									return true;									
+								}
+							}else{
+								System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
+										+ "\"" + " is unavailable\n");
+							}
 					}else{
-						System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
-								+ "\"" + " is already loaned out to another member\n");
+						System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : ALREADY HAS FULL MAX BOOKS LOANED ###\n");
+						return true;
 					}
 					break;
 		case "x": 	break;

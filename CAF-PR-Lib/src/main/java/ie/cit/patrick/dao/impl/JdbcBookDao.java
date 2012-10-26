@@ -1,6 +1,7 @@
 package ie.cit.patrick.dao.impl;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import javax.sql.DataSource;
@@ -120,7 +121,7 @@ public class JdbcBookDao implements BookDao{
 
 	public String formatDate(GregorianCalendar inputDate){
 		
-		inputDate.add(inputDate.MONTH, -1);
+		inputDate.add(Calendar.MONTH, -1);
 		
 		String strdate = null;
 		
