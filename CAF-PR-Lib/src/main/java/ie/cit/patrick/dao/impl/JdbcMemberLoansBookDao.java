@@ -8,12 +8,16 @@ import javax.sql.DataSource;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import ie.cit.patrick.MemberLoansBook;
 import ie.cit.patrick.dao.MemberLoansBookDao;
 import ie.cit.patrick.dao.mapper.MemberLoansBookRowMapper;
 import ie.cit.patrick.service.Workers;
 
+@Repository
+@Transactional
 public class JdbcMemberLoansBookDao implements MemberLoansBookDao{
 	
 	private JdbcTemplate jdbcTemplate;
@@ -40,13 +44,11 @@ public class JdbcMemberLoansBookDao implements MemberLoansBookDao{
 	}
 
 	@Override
-	public void returnBook(int bookId, int memberId) {
+	public void returnBook(int bookId, int memberId, double fine) {
 		
 
 		String sql = "UPDATE Member_loans_Book SET return_date = ?, fine = ?" +
 				"WHERE Book_id = ? AND Member_id = ?";
-		
-		double fine = calculateFine(memberId,bookId);
 		
 		try{
 		jdbcTemplate.update(sql, Workers.dateReturn(0),fine, bookId, memberId);
@@ -56,7 +58,6 @@ public class JdbcMemberLoansBookDao implements MemberLoansBookDao{
 		
 	}
 
-	
 	public MemberLoansBook findLoanedBookByID(int bookID){
 		
 		String sql = "SELECT * FROM Member_loans_Book WHERE Book_id = ? " +
@@ -65,12 +66,13 @@ public class JdbcMemberLoansBookDao implements MemberLoansBookDao{
 		try{
 		return jdbcTemplate.queryForObject(sql, new MemberLoansBookRowMapper(), bookID);
 		} catch (DataAccessException e){
-			System.out.println(e.getMessage());
+			e.getMessage();
 		}
 		return null;
 		
 		
 	}
+	
 	@Override
 	public MemberLoansBook findByBookIDandMemberID(int memberID, int bookID){
 		
@@ -79,7 +81,7 @@ public class JdbcMemberLoansBookDao implements MemberLoansBookDao{
 		try{
 		return jdbcTemplate.queryForObject(sql, new MemberLoansBookRowMapper(), bookID, memberID);
 		} catch (DataAccessException e){
-			System.out.println("Error finding loan " +e.getMessage());
+			System.out.println("Error finding loan by bookId and MemberId" +e.getMessage());
 		}
 		return null;
 		
@@ -87,20 +89,21 @@ public class JdbcMemberLoansBookDao implements MemberLoansBookDao{
 	}
 	
 	@Override
-	public double calculateFine(int memberId, int bookId) {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		double fine = 0;
-		String loanDate = df.format(findByBookIDandMemberID(memberId, bookId).getLoan_date().getTime());
-		int daysBetween = Workers.daysBetween(loanDate, Workers.dateReturn(0));
-
-		fine = daysBetween*5-70;
-			if(fine>0){
-			}else{
-				fine = 0;
-			}
-			//doubles give crazy results, damn floating points
-		return fine/100;
+	public MemberLoansBook findByBookIDMemberIDReturnDate(int memberID, int bookID, String date){
+		
+		String sql = "SELECT * FROM Member_loans_Book WHERE Book_id = ? AND Member_id = ? AND return_date = ?";
+		
+		try{
+		return jdbcTemplate.queryForObject(sql, new MemberLoansBookRowMapper(), bookID, memberID, date);
+		} catch (DataAccessException e){
+			System.out.println("Error finding loan by bookId, MemberId and date " +e.getMessage());
+		}
+		return null;
+		
+		
 	}
+	
+
 
 	@Override
 	public List<MemberLoansBook> findCurrentLoansByMemberId(int memberId) {

@@ -1,16 +1,23 @@
 package ie.cit.patrick.service.impl;
 
 
+import java.text.SimpleDateFormat;
+
+import org.springframework.transaction.annotation.Transactional;
+
 import ie.cit.patrick.Member;
 import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.dao.MemberLoansBookDao;
 import ie.cit.patrick.service.LibraryService;
+import ie.cit.patrick.service.Workers;
 
+@Transactional
 public class LibraryServiceImpl implements LibraryService {
 	MemberDao memberDao;
 	BookDao bookDao;
 	MemberLoansBookDao memberLoansBookDao;
+	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 	
 	public LibraryServiceImpl(){
 		
@@ -21,66 +28,90 @@ public class LibraryServiceImpl implements LibraryService {
 		this.bookDao = bookDao;
 		this.memberLoansBookDao = memberLoansBookDao;
 	}
-
+	
+	@Transactional
 	@Override
 	public boolean loanBook(int memberId, int bookId) {
-		
-		if(checkBookAvailable(bookId)){
-		memberLoansBookDao.loanBook(memberId, bookId);
-		bookDao.makeBookUnavailable(bookId);
-		return true;
-		} else{
-		return false;
+
+		if (checkBookAvailable(bookId) && checkBookAllowance(memberId)) {
+			memberLoansBookDao.loanBook(memberId, bookId);
+			bookDao.makeBookUnavailable(bookId);
+			return true;
+		} else {
+			return false;
 		}
 	}
 	
+	@Transactional
 	@Override
 	public boolean loanBook(int memberId, String bookISBN) {
-		
-		if(checkBookAvailable(bookISBN)){
-		int bookId = bookDao.findBookByISBN(bookISBN).getId();
-		memberLoansBookDao.loanBook(memberId, bookId);
-		bookDao.makeBookUnavailable(bookId);
-		return true;
-		} else{
-		return false;
-		}
-	}
 
-	@Override
-	public boolean returnBook(int memberId, int bookId) {
-		
-		if(memberId==checkWhoLoanedBook(bookId)){
-		memberLoansBookDao.returnBook(bookId, memberId);
-		applyfine(bookId, memberId);
-		bookDao.makeBookAvailable(bookId);
-		return true;
-		}else{
-		return false;
+		if (checkBookAvailable(bookISBN) && checkBookAllowance(memberId)) {
+			int bookId = bookDao.findBookByISBN(bookISBN).getId();
+			memberLoansBookDao.loanBook(memberId, bookId);
+			bookDao.makeBookUnavailable(bookId);
+			return true;
+		} else {
+			return false;
 		}
 	}
 	
+	@Transactional
+	@Override
+	public boolean returnBook(int memberId, int bookId) {
+
+		if (memberId == checkWhoLoanedBook(bookId)
+				&& !(checkBookAvailable(bookId))) {
+			double fine = calculateFine(memberId, bookId);
+			memberLoansBookDao.returnBook(bookId, memberId, fine);
+			applyfine(memberId, fine);
+			bookDao.makeBookAvailable(bookId);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	@Transactional
+	@Override
 	public boolean returnBook(int memberId, String bookISBN) {
-		
+
 		int bookId = bookDao.findBookByISBN(bookISBN).getId();
-		if(memberId==checkWhoLoanedBook(bookId)){
-		memberLoansBookDao.returnBook(bookId, memberId);
-		applyfine(bookId, memberId);
-		bookDao.makeBookAvailable(bookId);
-		return true;
-		}else{
-		return false;
+		if (memberId == checkWhoLoanedBook(bookId)
+				&& !(checkBookAvailable(bookId))) {
+			double fine = calculateFine(memberId, bookId);
+			memberLoansBookDao.returnBook(bookId, memberId, fine);
+			applyfine(memberId, fine);
+			bookDao.makeBookAvailable(bookId);
+			return true;
+		} else {
+			return false;
 		}
 	}
 
 	@Override
-	public void applyfine(int bookId, int memberId) {
+	public double calculateFine(int memberId, int bookId) {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		double fine = 0;
+		String loanDate = df.format(memberLoansBookDao.findLoanedBookByID(bookId).getLoan_date().getTime());
+		int daysBetween = Workers.daysBetween(loanDate, Workers.dateReturn(0));
+
+		fine = daysBetween*5-70;
+			if(fine>0){
+			}else{
+				fine = 0;
+			}
+			//doubles give crazy results, damn floating points
+		return fine/100;
+	}
+	
+	
+	@Override
+	public void applyfine(int memberId, double fine) {
 		
 		Member member = memberDao.findMemberById(memberId);
-		double fine = memberLoansBookDao.findByBookIDandMemberID(memberId, bookId).getFine();
 		member.setBalance(member.getBalance()+fine);
 		memberDao.updateMember(member);
-		
 	}
 	
 	@Override
@@ -257,5 +288,15 @@ public class LibraryServiceImpl implements LibraryService {
 		}		
 		
 		return true;
+	}
+	
+	@Override
+	public boolean checkIfAnyBooksAreLoaned(int memberId) {
+		
+		if(!memberLoansBookDao.findCurrentLoansByMemberId(memberId).isEmpty()){
+			return true;
+		} else{		
+		return false;
+		}
 	}
 }

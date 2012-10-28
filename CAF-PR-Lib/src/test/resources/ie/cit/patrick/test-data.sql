@@ -1,11 +1,11 @@
 INSERT INTO book (id,title,author,publisher,publication_date,isbn,available) 
 VALUES ('3421','Raspberry Pi User Guide', 'Eben Upton', 'John Wiley & Sons', '2012-09-14', '111846446X', false);
 INSERT INTO book (id,title,author,publisher,publication_date,isbn,available) 
-VALUES ('1236','HTML & CSS: Design and Build Web Sites', 'Jon Duckett', 'John Wiley & Sons', '2011-11-18', '123456789B',true);
-INSERT INTO book (id,title,author,publisher,publication_date,isbn) 
-VALUES ('627','Python Programming for the Absolute Beginner', 'Mike Dawson', 'Course Technology PTR', '2010-01-30', '1435445002');
-INSERT INTO book (id,title,author,publisher,publication_date,isbn) 
-VALUES ('835','Digital Marketing Strategy Implementation and Practice', 'Dave Chaffey', 'Pearson', '2012-07-12', '0273746103');
+VALUES ('1236','HTML & CSS: Design and Build Web Sites', 'Jon Duckett', 'John Wiley & Sons', '2011-11-18', '123456789B',false);
+INSERT INTO book (id,title,author,publisher,publication_date,isbn, available) 
+VALUES ('627','Python Programming for the Absolute Beginner', 'Mike Dawson', 'Course Technology PTR', '2010-01-30', '1435445002', false);
+INSERT INTO book (id,title,author,publisher,publication_date,isbn, available) 
+VALUES ('835','Digital Marketing Strategy Implementation and Practice', 'Dave Chaffey', 'Pearson', '2012-07-12', '0273746103', false);
 INSERT INTO book (id,title,author,publisher,publication_date,isbn, available) 
 VALUES ('4454','Dancing at Lughnasa', 'A N Other', 'Faber and Faber', '2012-07-12', '0571144799', false);
 INSERT INTO book (id,title,author,publisher,publication_date,isbn, available) 
@@ -33,12 +33,12 @@ VALUES ('3425','3421', '2012-10-25', '2012-11-08', '0.00');
 INSERT INTO Member_loans_Book (Member_id, Book_id, loan_date, return_date) 
 VALUES ('543','4454', '2012-10-14', '2012-10-28');
 INSERT INTO Member_loans_Book (Member_id, Book_id, loan_date, return_date) 
-VALUES ('9332','1236', '2012-10-25',  '2012-11-08');
-INSERT INTO Member_loans_Book (Member_id, Book_id, loan_date, return_date) 
-VALUES ('9332','835', '2012-08-10', '2012-10-01');
+VALUES ('9332','1236', '2012-06-25',  '2012-07-08');
+INSERT INTO Member_loans_Book (Member_id, Book_id, loan_date) 
+VALUES ('9332','835', '2012-08-10');
 INSERT INTO Member_loans_Book (Member_id, Book_id, loan_date) 
 VALUES ('9332','1236', '2012-08-06');
 INSERT INTO Member_loans_Book (Member_id, Book_id, loan_date) 
-VALUES ('1234','746', '2012-10-10');
+VALUES ('1234','627', '2012-10-10');
 
 

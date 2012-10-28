@@ -1,6 +1,7 @@
 package ie.cit.patrick.dao;
 
 import java.util.List;
+
 import ie.cit.patrick.Member;
 
 public interface MemberDao {

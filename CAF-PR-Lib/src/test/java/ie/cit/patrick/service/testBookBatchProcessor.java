@@ -10,7 +10,6 @@ import ie.cit.patrick.dao.BookDao;
 import ie.cit.patrick.service.impl.BookBatchProcessor;
 
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +26,6 @@ public class testBookBatchProcessor {
 	@Autowired
 	BookDao bookDao;
 	
-		
-	@Before
-	public void setUp() throws Exception {
-	}
 
 	@Test
 	public void basicSetup(){

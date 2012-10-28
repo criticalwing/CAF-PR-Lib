@@ -50,14 +50,13 @@ public class MainLibraryApp {
 										System.out.print("\n### Member: " + lS.memberNamefromID(memberId) + " ###");
 										System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookLoan")));
 										input = keys.next();
-										if (!loanBook(input, memberId)) {
+										if (!loanBookMenu(input, memberId)) {
 											System.out.println("\nPlease choose a correct option (A,B, or X)");
 										}
 									//check if user has press x to return to previous screen
-									} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, memberId));
+									} while(input.compareToIgnoreCase("X")!=0||!loanBookMenu(input, memberId));
 							} else{
 								System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberId) + " : STATUS INACTIVE ###\n");
-								return true;
 							}
 					} else{
 						System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberId) + " : ALREADY HAS FULL MAX BOOKS LOANED ###\n");
@@ -65,14 +64,18 @@ public class MainLibraryApp {
 					}
 					break;
 		case "B": 	memberId = getID();
+					if(lS.checkIfAnyBooksAreLoaned(memberId)){
 					do {
 						System.out.print("\n### Member: " + lS.memberNamefromID(memberId) + " ###");
 						System.out.print(Workers.DisplayMenu(Workers.convertFiletoStrings("src/main/resources/ie/cit/patrick/menutext/BookReturn")));
 						input = keys.next();
-						if (!returnBook(input, memberId)) {
+						if (!returnBookMenu(input, memberId)) {
 							System.out.println("\nPlease choose a correct option (A,B, or X)");
 						}
-					} while(input.compareToIgnoreCase("X")!=0||!loanBook(input, memberId));				
+					} while(input.compareToIgnoreCase("X")!=0||!loanBookMenu(input, memberId));
+					}else {
+						System.out.print("\n### Member: " + lS.memberNamefromID(memberId) + " : HAS NO BOOKS CURRENTLY OUT ON LOAN ###\n");
+					}
 					break;
 		case "x": 	break;
 		case "X":	break;
@@ -82,52 +85,62 @@ public class MainLibraryApp {
 		return true;
 		}
 	
-	private static boolean loanBook(String input, int memberID){
+	private static boolean loanBookMenu(String input, int memberID){
 		
 		input = input.toUpperCase();
 		switch(input){
-					//check if book is loaned to see if max allowance reached
-		case "A": 	if(lS.checkBookAllowance(memberID)){
-							int bookId = getBookID();
-							if(lS.checkBookAvailable(bookId)){
-								lS.loanBook(memberID, bookId);
-								System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
-													+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
-									//complete check after book is loaned to see if max allowance reached
-									if(!lS.checkBookAllowance(memberID)){
-										System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : NOW HAS MAX BOOKS LOANED ###\n");
-										return true;									
-									}
-								}else{
-									System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
-											+ "\"" + " is unavailable\n");
-								}
-					}else{
-						System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : NOW HAS MAX BOOKS LOANED ###\n");
-						return true;
-					}
-					break;
-					//check if book is loaned to see if max allowance reached
-		case "B":  	if(lS.checkBookAllowance(memberID)){
-							String bookISBN = getBookISBN();
-							if(lS.checkBookAvailable(bookISBN)){
-							lS.loanBook(memberID, bookISBN);
-							System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
-												+ "\"" + " loaned to " + lS.memberNamefromID(memberID) + "\n");
-								//complete check after book is loaned to see if max allowance reached
-								if(!lS.checkBookAllowance(memberID)){
-									System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : ALREADY HAS FULL MAX BOOKS LOANED ###\n");
-									return true;									
-								}
-							}else{
-								System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
-										+ "\"" + " is unavailable\n");
-							}
-					}else{
-						System.out.print("\n### NO MORE LOANS POSSIBLE Member: " + lS.memberNamefromID(memberID) + " : ALREADY HAS FULL MAX BOOKS LOANED ###\n");
-						return true;
-					}
-					break;
+					
+		case "A":
+			int bookId = getBookID();
+			if (lS.loanBook(memberID, bookId)) {
+				System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+						+ "\"" + " loaned to " + lS.memberNamefromID(memberID)
+						+ "\n");
+				// complete check after book is loaned to see if max allowance reached
+				if (!lS.checkBookAllowance(memberID)) {
+					System.out.print("\n### NO MORE LOANS POSSIBLE Member: "
+							+ lS.memberNamefromID(memberID)
+							+ " : NOW HAS MAX BOOKS LOANED ###\n");
+					return true;
+				}
+				// check why they can't loan a book and print result
+			} else if (!lS.checkBookAllowance(memberID)) {
+				System.out.print("\n### NO MORE LOANS POSSIBLE Member: "
+						+ lS.memberNamefromID(memberID)
+						+ " : NOW HAS MAX BOOKS LOANED ###\n");
+				return true;
+			} else {
+				System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+						+ "\"" + " is unavailable\n");
+			}
+			break;
+					
+
+		case "B":
+			String bookISBN = getBookISBN();
+			if (lS.loanBook(memberID, bookISBN)) {
+				System.out.print("Book: " + "\""
+						+ lS.bookNamefromISBN(bookISBN) + "\"" + " loaned to "
+						+ lS.memberNamefromID(memberID) + "\n");
+				// complete check after book is loaned to see if max allowance reached
+				if (!lS.checkBookAllowance(memberID)) {
+					System.out.print("\n### NO MORE LOANS POSSIBLE Member: "
+							+ lS.memberNamefromID(memberID)
+							+ " : NOW HAS MAX BOOKS LOANED ###\n");
+					return true;
+				}
+				// check why they can't loan a book and print result
+			} else if (!lS.checkBookAllowance(memberID)) {
+				System.out.print("\n### NO MORE LOANS POSSIBLE Member: "
+						+ lS.memberNamefromID(memberID)
+						+ " : NOW HAS MAX BOOKS LOANED ###\n");
+				return true;
+			} else {
+				System.out.print("Book: " + "\""
+						+ lS.bookNamefromISBN(bookISBN) + "\""
+						+ " is unavailable\n");
+			}
+break;
 		case "x": 	break;
 		case "X":	break;
 		default: 	return false;
@@ -135,42 +148,61 @@ public class MainLibraryApp {
 		return true;
 	}
 
-	private static boolean returnBook(String input, int memberID){
+	private static boolean returnBookMenu(String input, int memberID){
 		
 		input = input.toUpperCase();
-		switch(input){
-		
-		case "A": 	int bookId = getBookID();
-					if(!lS.checkBookAvailable(bookId)){
-							if(!lS.returnBook(memberID, bookId)){
-								System.out.print("Error, Book: " + "\"" + lS.bookNamefromID(bookId)
-										+ "\"" + " is not loaned out to "+lS.memberNamefromID(memberID) +"\n");
-							}else{
-							System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
-												+ "\"" + " returned\n");
-							}
-					}else{
-						System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
-								+ "\"" + " has already been returned\n");
-					}
-					break;
-		case "B":  	String bookISBN = getBookISBN();
-					if(!lS.checkBookAvailable(bookISBN)){
-						if(!lS.returnBook(memberID, bookISBN)){
-							System.out.print("Error, Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
-									+ "\"" + " is not loaned out to "+lS.memberNamefromID(memberID) +"\n");
-						}else{
-						System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
-											+ "\"" + " returned\n");
-						}
-					}else{
-						System.out.print("Book: " + "\"" + lS.bookNamefromISBN(bookISBN)
-								+ "\"" + " has already been returned\n");
-					}
-					break;
-		case "x": 	break;
-		case "X":	break;
-		default: 	return false;
+		switch (input) {
+
+		case "A":
+			int bookId = getBookID();
+			if (lS.returnBook(memberID, bookId)) {
+				System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
+						+ "\"" + " returned\n");
+				// check why they can't return a book and print result
+				if(lS.checkIfAnyBooksAreLoaned(memberID)){
+					System.out.print("\n### Member: " + lS.memberNamefromID(memberID) + " : HAS NOW RETURNED ALL THEIR BOOKS ###\n");
+				}
+			} else {
+				if (!(lS.checkBookAvailable(bookId))) {
+					System.out.print("Error, Book: " + "\""
+							+ lS.bookNamefromID(bookId) + "\""
+							+ " is not loaned out to "
+							+ lS.memberNamefromID(memberID) + "\n");
+				} else {
+					System.out.print("Book: " + "\""
+							+ lS.bookNamefromID(bookId) + "\""
+							+ " has already been returned\n");
+				}
+			}
+			break;
+		case "B":
+			String bookISBN = getBookISBN();
+			if (lS.returnBook(memberID, bookISBN)) {
+				System.out.print("Book: " + "\""
+						+ lS.bookNamefromISBN(bookISBN) + "\"" + " returned\n");
+				if(lS.checkIfAnyBooksAreLoaned(memberID)){
+					System.out.print("\n### Member: " + lS.memberNamefromID(memberID) + " : HAS NOW RETURNED ALL THEIR BOOKS ###\n");
+				}
+				// check why they can't return a book and print result
+			} else {
+				if (!(lS.checkBookAvailable(bookISBN))) {
+					System.out.print("Error, Book: " + "\""
+							+ lS.bookNamefromISBN(bookISBN) + "\""
+							+ " is not loaned out to "
+							+ lS.memberNamefromID(memberID) + "\n");
+				} else {
+					System.out.print("Book: " + "\""
+							+ lS.bookNamefromISBN(bookISBN) + "\""
+							+ " has already been returned\n");
+				}
+			}
+			break;
+		case "x":
+			break;
+		case "X":
+			break;
+		default:
+			return false;
 		}
 		return true;
 	}

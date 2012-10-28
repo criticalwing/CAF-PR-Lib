@@ -1,5 +1,6 @@
 package ie.cit.patrick.dao;
 
+
 import ie.cit.patrick.Book;
 
 public interface BookDao {

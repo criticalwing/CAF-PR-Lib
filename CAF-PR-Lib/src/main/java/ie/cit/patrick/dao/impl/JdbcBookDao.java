@@ -12,7 +12,11 @@ import ie.cit.patrick.dao.mapper.BookRowMapper;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+@Repository
+@Transactional
 public class JdbcBookDao implements BookDao{
 	
 	private JdbcTemplate jdbcTemplate;

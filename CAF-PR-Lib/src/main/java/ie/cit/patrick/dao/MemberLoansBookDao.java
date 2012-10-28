@@ -4,18 +4,20 @@ import java.util.List;
 
 import ie.cit.patrick.MemberLoansBook;
 
+
 public interface MemberLoansBookDao {
 	
 	void loanBook(int MemberId, int bookId);
 	
-	void returnBook(int bookId, int memberId);
+	void returnBook(int bookId, int memberId, double fine);
 	
-	MemberLoansBook findByBookIDandMemberID(int bookID, int memberID);
+	MemberLoansBook findByBookIDandMemberID(int memberID, int bookID);
 	
+	MemberLoansBook findByBookIDMemberIDReturnDate(int memberID, int bookID, String Date);
+		
 	MemberLoansBook findLoanedBookByID(int bookID);
-	
-	double calculateFine(int memberId, int bookId);
 
 	List<MemberLoansBook> findCurrentLoansByMemberId(int memberId);
+	
 
 }

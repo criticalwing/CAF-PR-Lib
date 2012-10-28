@@ -1,5 +1,7 @@
 package ie.cit.patrick.service;
 
+
+
 public interface LibraryService {
 	
 	boolean loanBook(int membersId , int bookId);
@@ -10,7 +12,7 @@ public interface LibraryService {
 	
 	boolean returnBook(int memberId, String bookISBN);
 	
-	void applyfine(int bookId, int memberId);
+	void applyfine(int memberId, double fine);
 	
 	String memberNamefromID(int id);
 	
@@ -42,4 +44,7 @@ public interface LibraryService {
 
 	boolean checkBookAllowance(int memberId);
 
+	boolean checkIfAnyBooksAreLoaned(int memberId);
+
+	double calculateFine(int memberId, int bookId);
 }
