@@ -6,10 +6,14 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<aop:aspectj-autoproxy>
-		<aop:include name="loanReturnLogger" />
+		<aop:include name="memberDBAccessLogger" />
+		<aop:include name="bookDBAccessLogger" />
+		<aop:include name="LoanReturnLogger" />
 	</aop:aspectj-autoproxy>
 		
-	<bean id="loanReturnLogger" class="ie.cit.patrick.service.LoanReturnLogger" />
+	<bean id="loanReturnLogger" class="ie.cit.patrick.service.logger.LoanReturnLogger" />
+	<bean id="memberDBAccessLogger" class="ie.cit.patrick.service.logger.MemberDBAccessLogger" />
+	<bean id="bookDBAccessLogger" class="ie.cit.patrick.service.logger.BookDBAccessLogger" />
 
 
 </beans>
