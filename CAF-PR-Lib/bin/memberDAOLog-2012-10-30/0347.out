@@ -1,0 +1,3 @@
+ie.cit.patrick.dao.MemberDao 30/10/2012 03:48AM - JdbcMemberDao.updateMember(..) is attempting to update Member: Bob Hope in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 03:48AM - JdbcMemberDao.updateMember(..) successfully updated Member: Bob Hope in database
+

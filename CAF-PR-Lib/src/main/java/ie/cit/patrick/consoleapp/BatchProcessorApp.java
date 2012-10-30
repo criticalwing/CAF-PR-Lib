@@ -4,9 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
-
-import ie.cit.patrick.dao.BookDao;
-import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.service.BatchProcessor;
 import ie.cit.patrick.service.Workers;
 
@@ -18,8 +15,6 @@ public class BatchProcessorApp {
 	static Scanner keys = new Scanner(System.in);
 	static BatchProcessor bookBP;
 	static BatchProcessor memberBP;
-	static BookDao bookDao;
-	static MemberDao memberDao;
 	static String BatchProcessDate;
 	static String BatchProcessTime;
 
@@ -28,8 +23,6 @@ public class BatchProcessorApp {
 		context = new ClassPathXmlApplicationContext("classpath:ie/cit/patrick/batchApp-context.xml");
 		bookBP=(BatchProcessor)context.getBean("bookBatchProcessor");
 		memberBP=(BatchProcessor)context.getBean("memberBatchProcessor");
-		bookDao=(BookDao)context.getBean("bookDao");
-		memberDao=(MemberDao)context.getBean("memberDao");
 		
 		runMenu();
 

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="main/java/|main/resources/|test/java/|test/resources/|main/logs/|main/logs/batchlogs/" kind="src" path="src"/>
+	<classpathentry excluding="main/java/|main/resources/|test/java/|test/resources/|main/logs/|main/logs/batchlogs/|main/UMLDiagrams/" kind="src" path="src"/>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry excluding="src/|src/main/java/|src/main/resources/|src/test/java/|src/test/resources/|src/main/logs/|src/main/logs/batchlogs/" kind="src" path=""/>
+	<classpathentry excluding="src/|src/main/java/|src/main/resources/|src/test/java/|src/test/resources/|src/main/logs/|src/main/logs/batchlogs/|src/main/UMLDiagrams/" kind="src" path=""/>
 	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/test/resources"/>
 	<classpathentry excluding="batchlogs/" kind="src" path="src/main/logs"/>
 	<classpathentry kind="src" path="src/main/logs/batchlogs"/>
+	<classpathentry kind="src" path="src/main/UMLDiagrams"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/HSQLDB/hsqldb.jar"/>
 	<classpathentry kind="lib" path="/Users/PatrickRobertson/Google Drive/CIT/Computer Application Frameworks/JavaRepos/HSQLDB/sqltool.jar"/>

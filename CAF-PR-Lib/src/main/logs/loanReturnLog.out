@@ -62,3 +62,43 @@ ie.cit.patrick.service.impl.LibraryServiceImpl 29/10/2012 11:06PM - Member:9332 
 ie.cit.patrick.service.impl.LibraryServiceImpl 29/10/2012 11:06PM - Member:9332 has returned book book with Id:1236
 ie.cit.patrick.service.impl.LibraryServiceImpl 29/10/2012 11:06PM - Member:1234 will attempt to return book with Id:627
 ie.cit.patrick.service.impl.LibraryServiceImpl 29/10/2012 11:06PM - Member:1234 has returned book book with Id:627
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 will attempt to loan book with Id:30
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 has loaned book with Id:30
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 will attempt to loan book with Id:29
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 has loaned book with Id:29
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 will attempt to loan book with Id:28
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 has loaned book with Id:28
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 will attempt to loan book with Id:27
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:43AM - Member:9445 has loaned book with Id:27
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:47AM - Member:9467 will attempt to loan book with Id:1853260010
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:47AM - Member:9467 has loaned book with Id:1853260010
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:48AM - Member:9467 will attempt to loan book with Id:72
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:48AM - Member:9467 has loaned book with Id:72
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:48AM - Member:9467 will attempt to loan book with Id:1846682363
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:48AM - Member:9467 has loaned book with Id:1846682363
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:48AM - Member:9467 will attempt to return book with Id:71
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:48AM - Member:9467 has returned book book with Id:71
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:50AM - Member:9467 will attempt to return book with Id:72
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:50AM - Member:9467 has returned book book with Id:72
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:50AM - Member:9467 will attempt to return book with Id:77
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:50AM - Member:9467 has returned book book with Id:77
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:50AM - Member:9468 will attempt to loan book with Id:74
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:50AM - Member:9468 has loaned book with Id:74
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:51AM - Member:9468 will attempt to return book with Id:74
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:51AM - Member:9468 has returned book book with Id:74
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:4567 will attempt to loan book with Id:746
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:4567 has loaned book with Id:746
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 will attempt to return book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 has returned book book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:232 will attempt to return book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:232 has returned book book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:232 will attempt to return book with Id:835
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:232 has returned book book with Id:835
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 will attempt to return book with Id:835
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 has returned book book with Id:835
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 will attempt to return book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 has returned book book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 will attempt to return book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 has returned book book with Id:1236
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:1234 will attempt to return book with Id:627
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:1234 has returned book book with Id:627

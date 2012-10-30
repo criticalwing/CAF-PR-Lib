@@ -1,0 +1,148 @@
+<class-diagram version="1.0.10" icons="true" automaticImage="JPEG" always-add-relationships="true" 
+  generalizations="true" realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.service.impl.MemberBatchProcessor" 
+    project="CAF-PR-Lib" file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/service/impl/MemberBatchProcessor.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="303" y="832"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="2" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.service.BatchProcessor" 
+    project="CAF-PR-Lib" file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/service/BatchProcessor.java" binary="false">    
+    <position height="-1" width="-1" x="490" y="369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.service.impl.BookBatchProcessor" 
+    project="CAF-PR-Lib" file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/service/impl/BookBatchProcessor.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="656" y="795"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.dao.BookDao" project="CAF-PR-Lib" 
+    file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/dao/BookDao.java" binary="false">    
+    <position height="-1" width="-1" x="993" y="794"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.dao.MemberDao" project="CAF-PR-Lib" 
+    file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/dao/MemberDao.java" binary="false">    
+    <position height="-1" width="-1" x="-58" y="826"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.consoleapp.BatchProcessorApp" 
+    project="CAF-PR-Lib" file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/consoleapp/BatchProcessorApp.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="488" y="98"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.service.logger.BookDBAccessLogger" 
+    project="CAF-PR-Lib" file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/service/logger/BookDBAccessLogger.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="989" y="440"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="8" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.service.logger.MemberDBAccessLogger" 
+    project="CAF-PR-Lib" file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/service/logger/MemberDBAccessLogger.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="-55" y="415"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="9" corner="BOTTOM_RIGHT" language="java" name="ie.cit.patrick.service.logger.BatchLogger" 
+    project="CAF-PR-Lib" file="/CAF-PR-Lib/src/main/java/ie/cit/patrick/service/logger/BatchLogger.java" binary="false">    
+    <position height="-1" width="-1" x="955" y="170"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <dependency id="10">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <association id="11">    
+    <bendpoint x="676" y="101"/>    
+    <bendpoint x="674" y="233"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="12" name="bookBP">        
+        <position height="14" width="50" x="646" y="258"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="14">    
+    <bendpoint x="657" y="370"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <realization id="17">    
+    <bendpoint x="300" y="369"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <association id="18">    
+    <bendpoint x="301" y="100"/>    
+    <bendpoint x="301" y="230"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="19" name="memberBP">        
+        <position height="14" width="68" x="262" y="259"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="21">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="22" name="bookDao"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="25" name="MemberDao"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

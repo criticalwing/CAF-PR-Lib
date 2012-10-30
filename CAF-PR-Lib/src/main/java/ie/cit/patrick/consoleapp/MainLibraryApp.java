@@ -159,7 +159,7 @@ break;
 				System.out.print("Book: " + "\"" + lS.bookNamefromID(bookId)
 						+ "\"" + " returned\n");
 				// check why they can't return a book and print result
-				if(lS.checkIfAnyBooksAreLoaned(memberID)){
+				if(!lS.checkIfAnyBooksAreLoaned(memberID)){
 					System.out.print("\n### Member: " + lS.memberNamefromID(memberID) + " : HAS NOW RETURNED ALL THEIR BOOKS ###\n");
 				}
 			} else {

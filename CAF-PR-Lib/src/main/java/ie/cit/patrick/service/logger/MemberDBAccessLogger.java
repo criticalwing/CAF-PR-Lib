@@ -22,43 +22,49 @@ public class MemberDBAccessLogger {
 	
 	@Before("execution(* *..MemberDao+.addMember(..))")
 	public void trackMemberAddStart(JoinPoint point){
-		Member member = (Member)point.getArgs()[0];	
-		memberDBlogger.info("Attempting to add new Member: " + member.getName() + " to database");
+		Member member = (Member)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method + "is attempting to add new Member: " + member.getName() + " to database");
 		//System.out.print("Attempting to add new Member: " + member.getName() + " to database\n");
 	}
 	
 	@After("execution(* *..MemberDao+.addMember(..))")
 	public void trackMemberAddEnd(JoinPoint point){
-		Member member = (Member)point.getArgs()[0];	
-		memberDBlogger.info("Member: " + member.getName() + " successfully added to the database\n");
+		Member member = (Member)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method + " successfully added Member: " + member.getName() + " to the database\n");
 		//System.out.print("Member: " + member.getName() + " successfully added to database\n\n");
 	}
 	
 	@Before("execution(* *..MemberDao+.updateMember(..))")
 	public void trackMemberUpdateStart(JoinPoint point){
-		Member member = (Member)point.getArgs()[0];	
-		memberDBlogger.info("Attempting to update Member: " + member.getName() + " in database");
+		Member member = (Member)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method + " is attempting to update Member: " + member.getName() + " in database");
 		//System.out.print("Attempting to update Member: " + member.getName() + " in database\n");
 	}
 	
 	@After("execution(* *..MemberDao+.updateMember(..))")
 	public void trackMemberUpdateEnd(JoinPoint point){
-		Member member = (Member)point.getArgs()[0];	
-		memberDBlogger.info("Member: " + member.getName() + " successfully updated in database\n");
+		Member member = (Member)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method + " successfully updated Member: " + member.getName() + " in database\n");
 		//System.out.print("Member: " + member.getName() + " successfully updated in database\n\n");
 	}
 	
 	@Before("execution(* *..MemberDao+.deleteMember(..))")
 	public void trackMemberDeleteStart(JoinPoint point){
-		String memberId = point.getArgs()[0].toString();	
-		memberDBlogger.info("Attempting to delete Member with Id: " + memberId + " from database");
+		String memberId = point.getArgs()[0].toString();
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method + " attempting to delete Member with Id: " + memberId + " from database");
 		//System.out.print("Attempting to delete Member with Id: " + memberId + " from database\n");
 	}
 	
 	@After("execution(* *..MemberDao+.deleteMember(..))")
 	public void trackMemberDeleteEnd(JoinPoint point){
-		String memberId = point.getArgs()[0].toString();	
-		memberDBlogger.info("Member: " + memberId + " successfully deleted from database\n");
+		String memberId = point.getArgs()[0].toString();
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method +" successfully deleted Member: " + memberId + " from database\n");
 		//System.out.print("Member: " + memberId + " successfully deleted from database\n\n");
 	}
 
