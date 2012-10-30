@@ -41,7 +41,7 @@ public class testBookDao {
 	@Test
 	public void testUpdateBook(){
 		
-		Book y = bookDao.findBookByTitle("Foucalts Pendulum");
+		Book y = bookDao.findBookByTitle("Python Programming for the Absolute Beginner");
 		
 		y.setAuthor("Some Other Guy");
 		
@@ -56,11 +56,11 @@ public class testBookDao {
 	@Test
 	public void deleteBook(){
 		
-		Book y = bookDao.findBookByTitle("Foucalts Pendulum");
+		Book y = bookDao.findBookByTitle("Best Story ever");
 		
 		bookDao.deleteBook(y.getId());
 		
-		assertNull(bookDao.findBookByTitle("Foucalts Pendulum"));
+		assertNull(bookDao.findBookByTitle("Best Story ever"));
 		
 	}
 
