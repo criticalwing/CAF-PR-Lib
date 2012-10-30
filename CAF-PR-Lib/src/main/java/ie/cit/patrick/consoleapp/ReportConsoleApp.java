@@ -81,7 +81,7 @@ public class ReportConsoleApp {
 					//call method to get a valid Name
 		case "B": 	memberName = getName();
 					//check if it was x they entered to return to previous screen
-					if(memberName.compareToIgnoreCase("X")==0){
+					if(!(memberName.compareToIgnoreCase("X")==0)){
 					System.out.print(lS.getMembersWithFines(memberName));
 					}
 					break;

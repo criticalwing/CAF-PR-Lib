@@ -1,0 +1,631 @@
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@346cd0f9: startup date [Mon Oct 29 15:23:26 GMT 2012]; root of context hierarchy
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Loading XML bean definitions from class path resource [ie/cit/patrick/batchApp-context.xml]
+Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+Loading schema mappings from [META-INF/spring.schemas]
+Loaded schema mappings: {http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd=org/springframework/oxm/config/spring-oxm-3.0.xsd, http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/jms/spring-jms-3.0.xsd=org/springframework/jms/config/spring-jms-3.0.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd=org/springframework/web/servlet/config/spring-mvc-3.1.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/oxm/spring-oxm.xsd=org/springframework/oxm/config/spring-oxm-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd=org/springframework/web/servlet/config/spring-mvc-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/jms/spring-jms-2.5.xsd=org/springframework/jms/config/spring-jms-2.5.xsd, http://www.springframework.org/schema/oxm/spring-oxm-3.1.xsd=org/springframework/oxm/config/spring-oxm-3.1.xsd, http://www.springframework.org/schema/jms/spring-jms.xsd=org/springframework/jms/config/spring-jms-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/mvc/spring-mvc.xsd=org/springframework/web/servlet/config/spring-mvc-3.1.xsd, http://www.springframework.org/schema/jms/spring-jms-3.1.xsd=org/springframework/jms/config/spring-jms-3.1.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+Found XML schema [http://www.springframework.org/schema/beans/spring-beans.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+Found XML schema [http://www.springframework.org/schema/context/spring-context-3.1.xsd] in classpath: org/springframework/context/config/spring-context-3.1.xsd
+Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.1.xsd
+Loading bean definitions
+Loading XML bean definitions from class path resource [ie/cit/patrick/app-context.xml]
+Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+Found XML schema [http://www.springframework.org/schema/beans/spring-beans.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+Found XML schema [http://www.springframework.org/schema/tx/spring-tx-3.1.xsd] in classpath: org/springframework/transaction/config/spring-tx-3.1.xsd
+Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.1.xsd
+Loading bean definitions
+Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/mvc=org.springframework.web.servlet.config.MvcNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/oxm=org.springframework.oxm.config.OxmNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/jms=org.springframework.jms.config.JmsNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+Imported 9 bean definitions from relative location [app-context.xml]
+Loaded 13 bean definitions from location pattern [classpath:ie/cit/patrick/batchApp-context.xml]
+Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@346cd0f9: org.springframework.beans.factory.support.DefaultListableBeanFactory@12bf506d: defining beans [bookDao,memberDao,memberLoansBookDao,libraryService,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,bookBatchProcessor,memberBatchProcessor,dataSource]; root of factory hierarchy
+Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+Creating instance of bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+Eagerly caching bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0' to allow for resolving potential circular references
+Finished creating instance of bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+Adding [environmentProperties] PropertySource with lowest search precedence
+Loading properties file from class path resource [ie/cit/patrick/propertiesFile.properties]
+Adding [localProperties] PropertySource with lowest search precedence
+Searching for key 'BookBatchFile' in [environmentProperties]
+Searching for key 'BookBatchFile' in [systemProperties]
+Searching for key 'BookBatchFile' in [systemEnvironment]
+Could not find key 'BookBatchFile' in any property source. Returning [null]
+Searching for key 'BookBatchFile' in [localProperties]
+Found key 'BookBatchFile' in [localProperties] with type [String] and value 'src/main/resources/bookbatchFile'
+Searching for key 'delineator' in [environmentProperties]
+Searching for key 'delineator' in [systemProperties]
+Searching for key 'delineator' in [systemEnvironment]
+Could not find key 'delineator' in any property source. Returning [null]
+Searching for key 'delineator' in [localProperties]
+Found key 'delineator' in [localProperties] with type [String] and value '~'
+Searching for key 'MemberBatchFile' in [environmentProperties]
+Searching for key 'MemberBatchFile' in [systemProperties]
+Searching for key 'MemberBatchFile' in [systemEnvironment]
+Could not find key 'MemberBatchFile' in any property source. Returning [null]
+Searching for key 'MemberBatchFile' in [localProperties]
+Found key 'MemberBatchFile' in [localProperties] with type [String] and value 'src/main/resources/memberbatchFile'
+Searching for key 'delineator' in [environmentProperties]
+Searching for key 'delineator' in [systemProperties]
+Searching for key 'delineator' in [systemEnvironment]
+Could not find key 'delineator' in any property source. Returning [null]
+Searching for key 'delineator' in [localProperties]
+Found key 'delineator' in [localProperties] with type [String] and value '~'
+Searching for key 'driverClassName' in [environmentProperties]
+Searching for key 'driverClassName' in [systemProperties]
+Searching for key 'driverClassName' in [systemEnvironment]
+Could not find key 'driverClassName' in any property source. Returning [null]
+Searching for key 'driverClassName' in [localProperties]
+Found key 'driverClassName' in [localProperties] with type [String] and value 'com.mysql.jdbc.Driver'
+Searching for key 'url' in [environmentProperties]
+Searching for key 'url' in [systemProperties]
+Searching for key 'url' in [systemEnvironment]
+Could not find key 'url' in any property source. Returning [null]
+Searching for key 'url' in [localProperties]
+Found key 'url' in [localProperties] with type [String] and value 'jdbc:mysql://localhost/caf_pr'
+Searching for key 'username' in [environmentProperties]
+Searching for key 'username' in [systemProperties]
+Searching for key 'username' in [systemEnvironment]
+Could not find key 'username' in any property source. Returning [null]
+Searching for key 'username' in [localProperties]
+Found key 'username' in [localProperties] with type [String] and value 'root'
+Searching for key 'password' in [environmentProperties]
+Searching for key 'password' in [systemProperties]
+Searching for key 'password' in [systemEnvironment]
+Could not find key 'password' in any property source. Returning [null]
+Searching for key 'password' in [localProperties]
+Found key 'password' in [localProperties] with type [String] and value ''
+Searching for key 'maxActive' in [environmentProperties]
+Searching for key 'maxActive' in [systemProperties]
+Searching for key 'maxActive' in [systemEnvironment]
+Could not find key 'maxActive' in any property source. Returning [null]
+Searching for key 'maxActive' in [localProperties]
+Found key 'maxActive' in [localProperties] with type [String] and value '10'
+Searching for key 'initialSize' in [environmentProperties]
+Searching for key 'initialSize' in [systemProperties]
+Searching for key 'initialSize' in [systemEnvironment]
+Could not find key 'initialSize' in any property source. Returning [null]
+Searching for key 'initialSize' in [localProperties]
+Found key 'initialSize' in [localProperties] with type [String] and value '3'
+Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+Creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+Eagerly caching bean 'org.springframework.aop.config.internalAutoProxyCreator' to allow for resolving potential circular references
+Finished creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@2b80fe96]
+Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@1d73379f]
+Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@12bf506d: defining beans [bookDao,memberDao,memberLoansBookDao,libraryService,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,bookBatchProcessor,memberBatchProcessor,dataSource]; root of factory hierarchy
+Creating shared instance of singleton bean 'bookDao'
+Creating instance of bean 'bookDao'
+Creating shared instance of singleton bean 'dataSource'
+Creating instance of bean 'dataSource'
+Eagerly caching bean 'dataSource' to allow for resolving potential circular references
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Initializing new StandardEnvironment
+Adding [systemProperties] PropertySource with lowest search precedence
+Adding [systemEnvironment] PropertySource with lowest search precedence
+Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Creating instance of bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Eagerly caching bean 'org.springframework.transaction.config.internalTransactionAdvisor' to allow for resolving potential circular references
+Creating shared instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+Creating instance of bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+Eagerly caching bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' to allow for resolving potential circular references
+Finished creating instance of bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+Finished creating instance of bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Finished creating instance of bean 'dataSource'
+Eagerly caching bean 'bookDao' to allow for resolving potential circular references
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Adding transactional method 'addBook' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Creating implicit proxy for bean 'bookDao' with 0 common interceptors and 1 specific interceptors
+Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [ie.cit.patrick.dao.impl.JdbcBookDao@3205dd7b]
+Finished creating instance of bean 'bookDao'
+Creating shared instance of singleton bean 'memberDao'
+Creating instance of bean 'memberDao'
+Returning cached instance of singleton bean 'dataSource'
+Eagerly caching bean 'memberDao' to allow for resolving potential circular references
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Adding transactional method 'addMember' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Creating implicit proxy for bean 'memberDao' with 0 common interceptors and 1 specific interceptors
+Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [ie.cit.patrick.dao.impl.JdbcMemberDao@69f28aca]
+Finished creating instance of bean 'memberDao'
+Creating shared instance of singleton bean 'memberLoansBookDao'
+Creating instance of bean 'memberLoansBookDao'
+Returning cached instance of singleton bean 'dataSource'
+Eagerly caching bean 'memberLoansBookDao' to allow for resolving potential circular references
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Adding transactional method 'loanBook' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Creating implicit proxy for bean 'memberLoansBookDao' with 0 common interceptors and 1 specific interceptors
+Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [ie.cit.patrick.dao.impl.JdbcMemberLoansBookDao@139011ca]
+Finished creating instance of bean 'memberLoansBookDao'
+Creating shared instance of singleton bean 'libraryService'
+Creating instance of bean 'libraryService'
+Returning cached instance of singleton bean 'memberDao'
+Returning cached instance of singleton bean 'bookDao'
+Returning cached instance of singleton bean 'memberLoansBookDao'
+Eagerly caching bean 'libraryService' to allow for resolving potential circular references
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Adding transactional method 'loanBook' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Creating implicit proxy for bean 'libraryService' with 0 common interceptors and 1 specific interceptors
+Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [ie.cit.patrick.service.impl.LibraryServiceImpl@55c9f729]
+Finished creating instance of bean 'libraryService'
+Returning cached instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+Returning cached instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+Creating shared instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+Creating instance of bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+Eagerly caching bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0' to allow for resolving potential circular references
+Returning cached instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+Invoking afterPropertiesSet() on bean with name 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+Finished creating instance of bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Creating shared instance of singleton bean 'transactionManager'
+Creating instance of bean 'transactionManager'
+Returning cached instance of singleton bean 'dataSource'
+Eagerly caching bean 'transactionManager' to allow for resolving potential circular references
+Invoking afterPropertiesSet() on bean with name 'transactionManager'
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Finished creating instance of bean 'transactionManager'
+Returning cached instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+Creating shared instance of singleton bean 'bookBatchProcessor'
+Creating instance of bean 'bookBatchProcessor'
+Returning cached instance of singleton bean 'bookDao'
+Eagerly caching bean 'bookBatchProcessor' to allow for resolving potential circular references
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Finished creating instance of bean 'bookBatchProcessor'
+Creating shared instance of singleton bean 'memberBatchProcessor'
+Creating instance of bean 'memberBatchProcessor'
+Returning cached instance of singleton bean 'memberDao'
+Eagerly caching bean 'memberBatchProcessor' to allow for resolving potential circular references
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Finished creating instance of bean 'memberBatchProcessor'
+Returning cached instance of singleton bean 'dataSource'
+Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@23a35b19]
+Returning cached instance of singleton bean 'lifecycleProcessor'
+Returning cached instance of singleton bean 'bookBatchProcessor'
+Returning cached instance of singleton bean 'memberBatchProcessor'
+Returning cached instance of singleton bean 'bookDao'
+Returning cached instance of singleton bean 'memberDao'
+Returning cached instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.addBook]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+JdbcBookDao.addBook(..) is attempting to add new Book: Wuthering Heights to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO book (id, title, author, publisher, publication_date, isbn, available) VALUES (NULL, ?, ?, ?, ?, ?, ?)]
+SQL update affected 1 rows
+JdbcBookDao.addBook(..) successfully added Book: Wuthering Heights to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.addBook]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+JdbcBookDao.addBook(..) is attempting to add new Book: Python Programming for the Absolute Beginner to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO book (id, title, author, publisher, publication_date, isbn, available) VALUES (NULL, ?, ?, ?, ?, ?, ?)]
+SQL update affected 1 rows
+JdbcBookDao.addBook(..) successfully added Book: Python Programming for the Absolute Beginner to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Adding transactional method 'findBookById' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.findBookById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM book WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Adding transactional method 'makeBookUnavailable' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.makeBookUnavailable]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE BOOK SET available = false WHERE id = ?]
+SQL update affected 1 rows
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.findBookById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM book WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.addBook]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+JdbcBookDao.addBook(..) is attempting to add new Book: Digital Marketing Strategy Implementation and Practice to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO book (id, title, author, publisher, publication_date, isbn, available) VALUES (NULL, ?, ?, ?, ?, ?, ?)]
+SQL update affected 1 rows
+JdbcBookDao.addBook(..) successfully added Book: Digital Marketing Strategy Implementation and Practice to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.findBookById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM book WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Adding transactional method 'updateBook' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.updateBook]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+JdbcBookDao.updateBook(..) is attempting to update Book: Dancing at Lughnasa in database
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE BOOK SET title = ?, author = ?, publisher = ?, publication_date = ?, isbn = ?, available = ? WHERE id = ?]
+SQL update affected 1 rows
+JdbcBookDao.updateBook(..) successfully updated Book: Dancing at Lughnasa in database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.findBookById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM book WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.makeBookUnavailable]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE BOOK SET available = false WHERE id = ?]
+SQL update affected 1 rows
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.findBookById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM book WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.findBookById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM book WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Adding transactional method 'makeBookAvailable' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.makeBookAvailable]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE BOOK SET available = true WHERE id = ?]
+SQL update affected 1 rows
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcBookDao.findBookById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM book WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Adding transactional method 'addMember' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.addMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to add new Member: Bob Hope to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO Member (name,address1,address2,town,contact_number,balance)VALUES (?, ?, ?, ?, ?, ?);]
+SQL update affected 1 rows
+Member: Bob Hope successfully added to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.addMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to add new Member: Chris Stephenson to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO Member (name,address1,address2,town,contact_number,balance)VALUES (?, ?, ?, ?, ?, ?);]
+SQL update affected 1 rows
+Member: Chris Stephenson successfully added to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.addMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to add new Member: Vera Saunders to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO Member (name,address1,address2,town,contact_number,balance)VALUES (?, ?, ?, ?, ?, ?);]
+SQL update affected 1 rows
+Member: Vera Saunders successfully added to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.addMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to add new Member: Steven Saunders to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO Member (name,address1,address2,town,contact_number,balance)VALUES (?, ?, ?, ?, ?, ?);]
+SQL update affected 1 rows
+Member: Steven Saunders successfully added to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.addMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to add new Member: Logan Robertson to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO Member (name,address1,address2,town,contact_number,balance)VALUES (?, ?, ?, ?, ?, ?);]
+SQL update affected 1 rows
+Member: Logan Robertson successfully added to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Adding transactional method 'findMemberById' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Adding transactional method 'updateMember' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.updateMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to update Member: Janet Leigh in database
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE member SET name = ?, address1 = ?, address2 = ?, town = ?, contact_number = ?, book_allowance = ?, balance = ?, active = ? WHERE id = ?]
+SQL update affected 0 rows
+Member: Janet Leigh successfully updated in database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.updateMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to update Member: Stuart Little in database
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE member SET name = ?, address1 = ?, address2 = ?, town = ?, contact_number = ?, book_allowance = ?, balance = ?, active = ? WHERE id = ?]
+SQL update affected 1 rows
+Member: Stuart Little successfully updated in database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.updateMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to update Member: Steven Saunders in database
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE member SET name = ?, address1 = ?, address2 = ?, town = ?, contact_number = ?, book_allowance = ?, balance = ?, active = ? WHERE id = ?]
+SQL update affected 1 rows
+Member: Steven Saunders successfully updated in database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.updateMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to update Member: Logan Robertson in database
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE member SET name = ?, address1 = ?, address2 = ?, town = ?, contact_number = ?, book_allowance = ?, balance = ?, active = ? WHERE id = ?]
+SQL update affected 1 rows
+Member: Logan Robertson successfully updated in database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.updateMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to update Member: Janet Leigh in database
+Executing prepared SQL update
+Executing prepared SQL statement [UPDATE member SET name = ?, address1 = ?, address2 = ?, town = ?, contact_number = ?, book_allowance = ?, balance = ?, active = ? WHERE id = ?]
+SQL update affected 1 rows
+Member: Janet Leigh successfully updated in database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.addMember]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Attempting to add new Member: Patrick Stewart to database
+Executing prepared SQL update
+Executing prepared SQL statement [INSERT INTO Member (name,address1,address2,town,contact_number,balance)VALUES (?, ?, ?, ?, ?, ?);]
+SQL update affected 1 rows
+Member: Patrick Stewart successfully added to the database
+
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource
+Returning cached instance of singleton bean 'transactionManager'
+Creating new transaction with name [ie.cit.patrick.dao.impl.JdbcMemberDao.findMemberById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+Acquired Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] for JDBC transaction
+Switching JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] to manual commit
+Executing prepared SQL query
+Executing prepared SQL statement [SELECT * FROM member WHERE id = ?]
+Initiating transaction commit
+Committing JDBC transaction on Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver]
+Releasing JDBC Connection [jdbc:mysql://localhost/caf_pr, UserName=root@localhost, MySQL-AB JDBC Driver] after transaction
+Returning JDBC Connection to DataSource

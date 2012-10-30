@@ -2,23 +2,36 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<import resource="app-context.xml"/>
 	<context:property-placeholder location="classpath:ie/cit/patrick/propertiesFile.properties"/>
 	
+	<util:set id="bookBatchFiles">
+		<value>${BookBatchFile1}</value>
+		<value>${BookBatchFile2}</value>
+	</util:set>
+	
 	<bean id="bookBatchProcessor" class="ie.cit.patrick.service.impl.BookBatchProcessor">
 		<constructor-arg name="bookDao" ref="bookDao"/>
-		<constructor-arg name="fileLocation" value="${BookBatchFile}"/>
+		<constructor-arg name="fileLocation" ref="bookBatchFiles"/>
 		<constructor-arg name="delineator" value="${delineator}"/>	
 	</bean>
 	
+	<util:set id="memberBatchFiles">
+		<value>${MemberBatchFile1}</value>
+		<value>${MemberBatchFile2}</value>
+	</util:set>
+
 	<bean id="memberBatchProcessor" class="ie.cit.patrick.service.impl.MemberBatchProcessor">
 		<constructor-arg name="memberdao" ref="memberDao"/>
-		<constructor-arg name="fileLocation" value="${MemberBatchFile}"/>
+		<constructor-arg name="fileLocation" ref="memberBatchFiles"/>
 		<constructor-arg name="delineator" value="${delineator}"/>	
 	</bean>
+
 
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">

@@ -1,0 +1,178 @@
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processLines(..) is attempting to process this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~1~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd Third Edition~1998-05-01~1853260010, U~2~*U, U~Digital Marketing Strategy Implementation and Practice~Dave Chaffey and SomeOtherGuy~Pearson~2012-07-12~0273746103, U~3~*U, U~How to Design Websites~Alan Pipes~Laurence King~2011-10-17~1856697398, , U~How to Design Websites~Alan Pipes, X~How to Design Websites~Alan Pipes~Laurence King~2011-10-17~1856697398, U~How to Design Websites~Alan Pipes~Laurence King~2011~1856697398, U~How to Design Websites~Alan Pipes~Laurence King~2011-10-17]
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) is attempting to process this line: 
+U
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey and SomeOtherGuy
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processDecider(..) completed processing this line: 
+U
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey and SomeOtherGuy
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.impl.BookBatchProcessor 29/10/2012 06:24PM - BookBatchProcessor.processLines(..) completed processing this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~1~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd Third Edition~1998-05-01~1853260010, U~2~*U, U~Digital Marketing Strategy Implementation and Practice~Dave Chaffey and SomeOtherGuy~Pearson~2012-07-12~0273746103, U~3~*U, U~How to Design Websites~Alan Pipes~Laurence King~2011-10-17~1856697398, , U~How to Design Websites~Alan Pipes, X~How to Design Websites~Alan Pipes~Laurence King~2011-10-17~1856697398, U~How to Design Websites~Alan Pipes~Laurence King~2011~1856697398, U~How to Design Websites~Alan Pipes~Laurence King~2011-10-17]

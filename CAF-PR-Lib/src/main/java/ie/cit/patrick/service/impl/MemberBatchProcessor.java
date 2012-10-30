@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class MemberBatchProcessor implements BatchProcessor {
 		
-		String fileLocation;
+		String[] fileLocation;
 		String delineator;
 		@Autowired
 		MemberDao MemberDao;
@@ -27,14 +27,14 @@ public class MemberBatchProcessor implements BatchProcessor {
 			batchFullReport =new ArrayList<String>();
 			errorLog = new ArrayList<String>();
 		}
-		public MemberBatchProcessor(String fileLocation, String delineator) {
+		public MemberBatchProcessor(String[] fileLocation, String delineator) {
 			this.fileLocation = fileLocation;
 			this.delineator = delineator;
 			batchFullReport =new ArrayList<String>();
 			errorLog = new ArrayList<String>();
 		}
 		//if it is to be used as static this allows Dao to be set
-		public MemberBatchProcessor(MemberDao memberdao, String fileLocation, String delineator) {
+		public MemberBatchProcessor(MemberDao memberdao, String[] fileLocation, String delineator) {
 			this.MemberDao = memberdao;
 			this.fileLocation = fileLocation;
 			this.delineator = delineator;
@@ -43,10 +43,10 @@ public class MemberBatchProcessor implements BatchProcessor {
 		}
 		
 		//Getter & Setters
-		public String getFileLocation() {
+		public String[] getFileLocation() {
 			return fileLocation;
 		}
-		public void setFileLocation(String fileLocation) {
+		public void setFileLocation(String[] fileLocation) {
 			this.fileLocation = fileLocation;
 		}
 		public String getDelineator() {
@@ -75,23 +75,24 @@ public class MemberBatchProcessor implements BatchProcessor {
 		}
 
 		//Processing Methods
-		public ArrayList<String> convertFiletoStrings(){		
+		public ArrayList<String> convertFiletoStrings() {
 			ArrayList<String> lines = new ArrayList<String>();
-			
-				try{
-					
-				BufferedReader reader = new BufferedReader(new FileReader(fileLocation));
-				String line;
-				while ((line = reader.readLine())!=null){
-					lines.add(line);
-				}
-				reader.close();
-				} catch(FileNotFoundException fNFE){
+			for (String location : fileLocation) {
+				try {
+	
+					BufferedReader reader = new BufferedReader(new FileReader(
+							location));
+					String line;
+					while ((line = reader.readLine()) != null) {
+						lines.add(line);
+					}
+					reader.close();
+				} catch (FileNotFoundException fNFE) {
 					System.out.print(fNFE.getMessage());
-				} catch (IOException iOE){
+				} catch (IOException iOE) {
 					System.out.print(iOE.getMessage());
-				} 
-			
+				}
+			}
 			return lines;
 		}
 		
@@ -254,7 +255,8 @@ public class MemberBatchProcessor implements BatchProcessor {
 		//String Outputs
 		@Override
 		public String fullReport() {
-			String output = "------------ FULL REPORT -------------\n";
+			String output = "------------ FULL REPORT -------------\n" +
+				"Line No.	Details\n";
 			int x = 1;
 			for(String line:batchFullReport){
 				output = output + x +". " + line + "\n";
@@ -307,7 +309,8 @@ public class MemberBatchProcessor implements BatchProcessor {
 
 		
 		public String errorLog() {
-			String output = "\n------------ ERROR LOG ----------------\n";;
+			String output = "\n------------ ERROR LOG ----------------\n" +
+				"Line No.	Details\n";
 			int x = 1;
 			for(String line:errorLog){
 				output = output + x +". " + line + "\n";
@@ -319,7 +322,11 @@ public class MemberBatchProcessor implements BatchProcessor {
 			return output;
 		}
 		public String toString() {
-			return "MemberBatchProcessor [fileLocation=" + fileLocation
+			String locations ="";
+			for(String x:fileLocation){
+				locations = locations + x + " ";
+			}
+			return "MemberBatchProcessor [fileLocation=" + locations
 					+ ", delineator=" + delineator + "]";
 		}
 

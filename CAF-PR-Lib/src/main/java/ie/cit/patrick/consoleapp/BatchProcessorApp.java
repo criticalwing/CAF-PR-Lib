@@ -44,7 +44,7 @@ public class BatchProcessorApp {
 			}while((input.toLowerCase()=="y"));
 				System.out.println("##### Processing Batch Files #####\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n");
 			if(!processBatchFiles()){
-				System.out.println("##### Batch file(s) not found #####");	
+				System.out.println("##### Batch file(s) not found #####");
 			}
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 			Calendar cal = new GregorianCalendar();

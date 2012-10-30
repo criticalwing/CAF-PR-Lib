@@ -1,7 +1,6 @@
 package ie.cit.patrick.dao.impl;
 
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.sql.DataSource;

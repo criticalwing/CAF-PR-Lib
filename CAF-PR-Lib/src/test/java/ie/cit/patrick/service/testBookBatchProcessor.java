@@ -30,9 +30,11 @@ public class testBookBatchProcessor {
 	@Test
 	public void basicSetup(){
 						
-		String x = "BookBatchProcessor [fileLocation=src/test/resources/bookbatchFile, delineator=~]";
+		String x = "BookBatchProcessor [fileLocation=src/test/resources/bookbatchFile , delineator=~]";
 		
 		String y = bookBatchProcessor.toString();
+		
+		System.out.print(bookBatchProcessor.toString());
 		
 		assertEquals(x, y);
 		

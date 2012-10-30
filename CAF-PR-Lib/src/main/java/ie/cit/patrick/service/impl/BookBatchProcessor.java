@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class BookBatchProcessor implements BatchProcessor {
 	
-	String fileLocation;
+	String[] fileLocation;
 	String delineator;
 	@Autowired
 	BookDao bookDao;
@@ -29,14 +30,14 @@ public class BookBatchProcessor implements BatchProcessor {
 		batchFullReport =new ArrayList<String>();
 		errorLog = new ArrayList<String>();
 	}
-	public BookBatchProcessor(String fileLocation, String delineator) {
+	public BookBatchProcessor(String[] fileLocation, String delineator) {
 		this.fileLocation = fileLocation;
 		this.delineator = delineator;
 		batchFullReport =new ArrayList<String>();
 		errorLog = new ArrayList<String>();
 	}
 	//if it is to be used as static this allows Dao to be set
-	public BookBatchProcessor(BookDao bookDao, String fileLocation, String delineator) {
+	public BookBatchProcessor(BookDao bookDao, String[] fileLocation, String delineator) {
 		this.bookDao = bookDao;
 		this.fileLocation = fileLocation;
 		this.delineator = delineator;
@@ -45,10 +46,10 @@ public class BookBatchProcessor implements BatchProcessor {
 	}
 	
 	//Getter & Setters
-	public String getFileLocation() {
+	public String[] getFileLocation() {
 		return fileLocation;
 	}
-	public void setFileLocation(String fileLocation) {
+	public void setFileLocation(String[] fileLocation) {
 		this.fileLocation = fileLocation;
 	}
 	public String getDelineator() {
@@ -79,19 +80,20 @@ public class BookBatchProcessor implements BatchProcessor {
 	//Processing Methods
 	public ArrayList<String> convertFiletoStrings(){		
 		ArrayList<String> lines = new ArrayList<String>();
-			try{		
-			BufferedReader reader = new BufferedReader(new FileReader(fileLocation));
-			String line;
-			while ((line = reader.readLine())!=null){
-				lines.add(line);
-			}
-			reader.close();
-			} catch(FileNotFoundException fNFE){
+		for (String location : fileLocation){
+			try {
+				BufferedReader reader = new BufferedReader(new FileReader(location));
+				String line;
+				while ((line = reader.readLine()) != null) {
+					lines.add(line);
+				}
+				reader.close();
+			} catch (FileNotFoundException fNFE) {
 				System.out.print(fNFE.getMessage());
-			} catch (IOException iOE){
+			} catch (IOException iOE) {
 				System.out.print(iOE.getMessage());
-			} 
-		
+			}
+		}
 		return lines;
 	}
 	
@@ -129,8 +131,9 @@ public class BookBatchProcessor implements BatchProcessor {
 				bookDao.makeBookAvailable(Integer.parseInt(parts[1]));
 				Book output = bookDao.findBookById(Integer.parseInt(parts[1]));
 				batchFullReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked available");
-			} else{			
+			} else{	
 				String[] wholeDate = parts[5].split("-");
+				System.out.print(parts[5]);
 				GregorianCalendar date = new GregorianCalendar(Integer.parseInt(wholeDate[0]), Integer.parseInt(wholeDate[1]), Integer.parseInt(wholeDate[2]));
 				Book toUpDate = new Book(Integer.parseInt(parts[1]), parts[2], parts[3], parts[4], parts[6], date, true);
 				bookDao.updateBook(toUpDate);
@@ -159,14 +162,14 @@ public class BookBatchProcessor implements BatchProcessor {
 		}
 		//check that if a book is to be added or updated it has the correct date format
 		if(parts.length==6){
-			if(Workers.validateDate(parts[4])==false){
+			if(!Workers.validateDate(parts[4])){
 				errorLog.add("Line "+position+" does not contain an appropriately formatted date");
 				return false;
 			}
 		}
 		if(parts.length==7){
 			if(Workers.validateDate(parts[5])==false){
-				errorLog.add("Line "+position+" does not contain an appropriate first command character");
+				errorLog.add("Line "+position+" does not contain an appropriately formatted date");
 				return false;
 			}
 		}
@@ -176,8 +179,15 @@ public class BookBatchProcessor implements BatchProcessor {
 				return false;
 			}
 			if(!validateId(Integer.parseInt(parts[1]))){
-				errorLog.add("Line "+position+" Member: " + parts[1] + " does not exist");
+				errorLog.add("Line "+position+" Book: " + parts[1] + " does not exist");
 				return false;
+			}
+		}
+		//ensure that update lines have correct number of parts
+		if(parts[0].equals("U")){
+			if(parts.length!=3&&parts.length!=7){
+				errorLog.add("Line "+position+" does not contain enough elements for an update");
+			return false;
 			}
 		}
 		
@@ -202,7 +212,8 @@ public class BookBatchProcessor implements BatchProcessor {
 	//String Outputs
 	@Override
 	public String fullReport() {
-		String output = "------------ FULL REPORT -------------\n";
+		String output = "------------ FULL REPORT -------------\n" +
+				"Line No.	Details\n";
 		int x = 1;
 		for(String line:batchFullReport){
 			output = output + x +". " + line + "\n";
@@ -235,8 +246,7 @@ public class BookBatchProcessor implements BatchProcessor {
 			if(line.contains( " Error")){
 				errors++;
 			}
-		}
-		
+		}		
 		String output = "----------- REPORT -----------------\n" +
 				batchFullReport.size() + " total record" + Workers.sReturn(batchFullReport.size()) + " processed\n" +
 				booksAdded + " book" + Workers.sReturn(booksAdded) +" added\n" +
@@ -247,10 +257,10 @@ public class BookBatchProcessor implements BatchProcessor {
 						"------------------------------------\n\n";
 		return output;
 	}
-	
-	
+
 	public String errorLog() {
-		String output = "\n------------ ERROR LOG ----------------\n";;
+		String output = "\n------------ ERROR LOG ----------------\n" +
+				"Line No.	Details\n";
 		int x = 1;
 		for(String line:errorLog){
 			output = output + x +". " + line + "\n";
@@ -261,9 +271,15 @@ public class BookBatchProcessor implements BatchProcessor {
 		
 		return output;
 	}
+	@Override
 	public String toString() {
-		return "BookBatchProcessor [fileLocation=" + fileLocation
-				+ ", delineator=" + delineator + "]";
+		String locations ="";
+		for(String x:fileLocation){
+			locations = locations + x + " ";
+		}
+		
+		return "BookBatchProcessor [fileLocation="
+				+ locations + ", delineator=" + delineator + "]";
 	}
 
 

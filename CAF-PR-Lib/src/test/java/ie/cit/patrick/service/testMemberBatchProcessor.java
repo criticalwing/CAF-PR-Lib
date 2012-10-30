@@ -34,7 +34,7 @@ public class testMemberBatchProcessor {
 	@Test
 	public void basicSetup(){
 						
-		String x = "MemberBatchProcessor [fileLocation=src/test/resources/memberbatchFile, delineator=~]";
+		String x = "MemberBatchProcessor [fileLocation=src/test/resources/memberbatchFile , delineator=~]";
 		
 		String y = memberBatchProcessor.toString();
 		

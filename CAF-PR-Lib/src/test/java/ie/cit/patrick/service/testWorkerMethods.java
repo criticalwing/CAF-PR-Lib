@@ -70,6 +70,7 @@ public class testWorkerMethods {
 		
 		assertTrue(Workers.validateDate("1999-05-12"));
 		assertFalse(Workers.validateDate("12-199"));
+		assertFalse(Workers.validateDate("0273746103"));
 		assertFalse(Workers.validateDate("abcd"));
 
 	}

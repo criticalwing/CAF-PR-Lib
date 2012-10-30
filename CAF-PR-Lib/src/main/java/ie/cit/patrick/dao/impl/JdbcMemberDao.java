@@ -7,14 +7,12 @@ import javax.sql.DataSource;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ie.cit.patrick.Member;
 import ie.cit.patrick.dao.MemberDao;
 import ie.cit.patrick.dao.mapper.MemberRowMapper;
 
-@Repository
 @Transactional
 public class JdbcMemberDao implements MemberDao {
 	
