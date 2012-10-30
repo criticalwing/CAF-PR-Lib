@@ -132,7 +132,6 @@ public class BookBatchProcessor implements BatchProcessor {
 				batchFullReport.add("Book: " + "\"" + output.getTitle() + "\"" +" by "+ "\"" + output.getAuthor() + "\"" + " is now marked available");
 			} else{	
 				String[] wholeDate = parts[5].split("-");
-				System.out.print(parts[5]);
 				GregorianCalendar date = new GregorianCalendar(Integer.parseInt(wholeDate[0]), Integer.parseInt(wholeDate[1]), Integer.parseInt(wholeDate[2]));
 				Book toUpDate = new Book(Integer.parseInt(parts[1]), parts[2], parts[3], parts[4], parts[6], date, true);
 				bookDao.updateBook(toUpDate);

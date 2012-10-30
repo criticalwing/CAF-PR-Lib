@@ -67,5 +67,20 @@ public class MemberDBAccessLogger {
 		memberDBlogger.info(method +" successfully deleted Member: " + memberId + " from database\n");
 		//System.out.print("Member: " + memberId + " successfully deleted from database\n\n");
 	}
-
+	
+	@Before("execution(* *..MemberDao+.makeMember*(..))")
+	public void trackMemberUpdateAvailstart(JoinPoint point){
+		int id = (int)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method + " is attempting to update Member: " + id + " in database");
+		//System.out.print("Attempting to update Member: " + member.getName() + " in database\n");
+	}
+	
+	@After("execution(* *..MemberDao+.makeMember*(..))")
+	public void trackMemberUpdateAvailEnd(JoinPoint point){
+		int id = (int)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		memberDBlogger.info(method + " successfully updated Member: " + id + " in database\n");
+		//System.out.print("Member: " + member.getName() + " successfully updated in database\n\n");
+	}
 }

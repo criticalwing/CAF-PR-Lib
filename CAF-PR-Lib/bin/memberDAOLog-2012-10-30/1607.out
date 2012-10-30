@@ -1,0 +1,57 @@
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Bob Hope to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Bob Hope to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Chris Stephenson to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Chris Stephenson to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Vera Saunders to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Vera Saunders to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Steven Saunders to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Steven Saunders to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Logan Wolverine to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Logan Wolverine to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Betty Simpson to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Betty Simpson to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Ralf Wigan to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Ralf Wigan to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Peter Robertson to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Peter Robertson to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Patricia Roberton to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Patricia Roberton to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..)is attempting to add new Member: Liz Giesbers to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.addMember(..) successfully added Member: Liz Giesbers to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Stewart Patton in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Stewart Patton in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Patrick Robertson in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Patrick Robertson in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Stuart Patton in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Stuart Patton in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Maggie Robertson in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Maggie Robertson in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Ryan Adams in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Ryan Adams in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Viggo Mortensen in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Viggo Mortensen in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Winston Churchill in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Winston Churchill in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Stuart Patton in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Stuart Patton in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) is attempting to update Member: Steven Keenlyside in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 04:07PM - JdbcMemberDao.updateMember(..) successfully updated Member: Steven Keenlyside in database
+

@@ -102,3 +102,13 @@ ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 
 ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:9332 has returned book book with Id:1236
 ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:1234 will attempt to return book with Id:627
 ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 03:53AM - Member:1234 has returned book book with Id:627
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:19PM - Member:127 will attempt to loan book with Id:694
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:19PM - Member:127 has loaned book with Id:694
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:20PM - Member:127 will attempt to loan book with Id:123456789G
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:20PM - Member:127 has loaned book with Id:123456789G
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:20PM - Member:125 will attempt to return book with Id:685
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:20PM - Member:125 has returned book book with Id:685
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:21PM - Member:125 will attempt to return book with Id:685
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:21PM - Member:125 has returned book book with Id:685
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:21PM - Member:125 will attempt to return book with Id:686
+ie.cit.patrick.service.impl.LibraryServiceImpl 30/10/2012 04:21PM - Member:125 has returned book book with Id:686

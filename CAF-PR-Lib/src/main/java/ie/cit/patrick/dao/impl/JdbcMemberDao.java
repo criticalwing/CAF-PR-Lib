@@ -96,7 +96,28 @@ public class JdbcMemberDao implements MemberDao {
 
 	public void makeMemberInactive(int id){
 		
+		String sql = "UPDATE member SET active = false " +
+				"WHERE id = ?";
 		
+		try{
+		jdbcTemplate.update(sql, id);
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
+		
+		
+	}
+	
+	public void makeMemberActive(int id){
+		
+		String sql = "UPDATE member SET active = true " +
+				"WHERE id = ?";
+		
+		try{
+		jdbcTemplate.update(sql, id);
+		} catch (DataAccessException e){
+			System.out.println(e.getMessage());
+		}
 		
 		
 	}

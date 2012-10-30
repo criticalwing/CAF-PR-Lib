@@ -1,0 +1,9 @@
+ie.cit.patrick.dao.BookDao 30/10/2012 04:19PM - JdbcBookDao.makeBookUnavailable(..) is attempting to update Book: 694 in database
+ie.cit.patrick.dao.BookDao 30/10/2012 04:19PM - JdbcBookDao.makeBookUnavailable(..) successfully updated Book: 694 in database
+
+ie.cit.patrick.dao.BookDao 30/10/2012 04:20PM - JdbcBookDao.makeBookUnavailable(..) is attempting to update Book: 691 in database
+ie.cit.patrick.dao.BookDao 30/10/2012 04:20PM - JdbcBookDao.makeBookUnavailable(..) successfully updated Book: 691 in database
+
+ie.cit.patrick.dao.BookDao 30/10/2012 04:21PM - JdbcBookDao.makeBookAvailable(..) is attempting to update Book: 686 in database
+ie.cit.patrick.dao.BookDao 30/10/2012 04:21PM - JdbcBookDao.makeBookAvailable(..) successfully updated Book: 686 in database
+

@@ -1,0 +1,15 @@
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.addMember(..)is attempting to add new Member: Patrick Robertson to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.addMember(..) successfully added Member: Patrick Robertson to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.deleteMember(..) attempting to delete Member with Id: 9333 from database
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.deleteMember(..) successfully deleted Member: 9333 from database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.addMember(..)is attempting to add new Member: Patrick Robertson to database
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.addMember(..) successfully added Member: Patrick Robertson to the database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.updateMember(..) is attempting to update Member: Patrick Robertson in database
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.updateMember(..) successfully updated Member: Patrick Robertson in database
+
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.deleteMember(..) attempting to delete Member with Id: 9334 from database
+ie.cit.patrick.dao.MemberDao 30/10/2012 09:44AM - JdbcMemberDao.deleteMember(..) successfully deleted Member: 9334 from database
+

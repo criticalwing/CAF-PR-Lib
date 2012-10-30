@@ -3420,3 +3420,2630 @@ org.springframework.test.context.transaction.TransactionalTestExecutionListener 
 org.springframework.test.context.transaction.TransactionalTestExecutionListener 30/10/2012 09:44AM - Rolled back transaction after test execution for test context [[TestContext@2de0d5e3 testClass = testMemberLoansBookDao, testInstance = ie.cit.patrick.dao.testMemberLoansBookDao@3da7d559, testMethod = testFindLoanedBookByID@testMemberLoansBookDao, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@22e9ac75 testClass = testMemberLoansBookDao, locations = '{classpath:/ie/cit/patrick/test-context.xml}', classes = '{}', activeProfiles = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader']]]
 org.springframework.context.support.GenericApplicationContext 30/10/2012 09:44AM - Closing org.springframework.context.support.GenericApplicationContext@42e57c4c: startup date [Tue Oct 30 09:44:23 GMT 2012]; root of context hierarchy
 org.springframework.beans.factory.support.DefaultListableBeanFactory 30/10/2012 09:44AM - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7ca9f82b: defining beans [bookDao,memberDao,memberLoansBookDao,libraryService,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,loanReturnLogger,memberDBAccessLogger,bookDBAccessLogger,bookBatchProcessor,memberBatchProcessor,dataSource,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+org.springframework.context.support.ClassPathXmlApplicationContext 30/10/2012 04:07PM - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@743b4f79: startup date [Tue Oct 30 16:07:19 GMT 2012]; root of context hierarchy
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:07PM - Loading XML bean definitions from class path resource [ie/cit/patrick/batchApp-context.xml]
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:07PM - Loading XML bean definitions from class path resource [ie/cit/patrick/app-context.xml]
+org.springframework.context.support.PropertySourcesPlaceholderConfigurer 30/10/2012 04:07PM - Loading properties file from class path resource [ie/cit/patrick/propertiesFile.properties]
+org.springframework.beans.factory.support.DefaultListableBeanFactory 30/10/2012 04:07PM - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@55971b94: defining beans [bookDao,memberDao,memberLoansBookDao,libraryService,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,bookBatchFiles,bookBatchProcessor,memberBatchFiles,memberBatchProcessor,dataSource]; root of factory hierarchy
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processLines(..) is attempting to process this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~685~Watchmen~Alan Moore & SomeOtherGuy~Comix~1995-10-01~123456789A, U~697~*U, U~690~Reflected In You~DifferentAuthor~NewPublisher~2012-07-12~987654321X, U~696~*U, U~693~The Road~Cormac McCarthy~BestPushlisher~2012-10-02~12349874565, U~691~*A]
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+19785
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+19785
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - BookBatchProcessor.processLines(..) completed processing this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~685~Watchmen~Alan Moore & SomeOtherGuy~Comix~1995-10-01~123456789A, U~697~*U, U~690~Reflected In You~DifferentAuthor~NewPublisher~2012-07-12~987654321X, U~696~*U, U~693~The Road~Cormac McCarthy~BestPushlisher~2012-10-02~12349874565, U~691~*A]
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processLines(..) is attempting to process this line: [A~Bob Hope~50 Rodeo Drive~~Limerick~0871234567, A~Chris Stephenson~New House~Stephen Street~Boyle~0331234567, A~Vera Saunders~24A~Elysian~Cork~0211234667, A~Steven Saunders~24A~Elysian~Cork~0211234667, A~Logan Wolverine~Hjaltland~Pullerick~Cork~0211234667, A~Betty Simpson~UpHouse~Ballincollig~Cork~0214546876, A~Ralf Wigan~3 Redmill~Springfield~Cork~0221221111, A~Peter Robertson~Hajltland~Pullerick~Cork~0217336699, A~Patricia Roberton~Hjaltland~Pullerick~Cork~0217336699, A~Liz Giesbers~Terelton~~Cork~0214569393, U~135~Stewart Patton~South Road~Lerwick~Shetland~0871234567, U~124~*I, X~Some Guy~Wrong~Place~666, U~135~*I, P~125~23.50, U~137~Ryan Adams~Flat 10b~Manhatton~New York~0214569784, P~131~0.65, U~139~Winston Churchill~StormingBeaches~Normandy~France~0044152681, P~135~1.00, U~127~*A]
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+X
+Some Guy
+Wrong
+Place
+666
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+X
+Some Guy
+Wrong
+Place
+666
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:07PM - MemberBatchProcessor.processLines(..) completed processing this line: [A~Bob Hope~50 Rodeo Drive~~Limerick~0871234567, A~Chris Stephenson~New House~Stephen Street~Boyle~0331234567, A~Vera Saunders~24A~Elysian~Cork~0211234667, A~Steven Saunders~24A~Elysian~Cork~0211234667, A~Logan Wolverine~Hjaltland~Pullerick~Cork~0211234667, A~Betty Simpson~UpHouse~Ballincollig~Cork~0214546876, A~Ralf Wigan~3 Redmill~Springfield~Cork~0221221111, A~Peter Robertson~Hajltland~Pullerick~Cork~0217336699, A~Patricia Roberton~Hjaltland~Pullerick~Cork~0217336699, A~Liz Giesbers~Terelton~~Cork~0214569393, U~135~Stewart Patton~South Road~Lerwick~Shetland~0871234567, U~124~*I, X~Some Guy~Wrong~Place~666, U~135~*I, P~125~23.50, U~137~Ryan Adams~Flat 10b~Manhatton~New York~0214569784, P~131~0.65, U~139~Winston Churchill~StormingBeaches~Normandy~France~0044152681, P~135~1.00, U~127~*A]
+org.springframework.context.support.ClassPathXmlApplicationContext 30/10/2012 04:14PM - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@61decc8c: startup date [Tue Oct 30 16:14:38 GMT 2012]; root of context hierarchy
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:14PM - Loading XML bean definitions from class path resource [ie/cit/patrick/batchApp-context.xml]
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:14PM - Loading XML bean definitions from class path resource [ie/cit/patrick/app-context.xml]
+org.springframework.context.support.PropertySourcesPlaceholderConfigurer 30/10/2012 04:14PM - Loading properties file from class path resource [ie/cit/patrick/propertiesFile.properties]
+org.springframework.beans.factory.support.DefaultListableBeanFactory 30/10/2012 04:14PM - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3393bd72: defining beans [bookDao,memberDao,memberLoansBookDao,libraryService,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,bookBatchFiles,bookBatchProcessor,memberBatchFiles,memberBatchProcessor,dataSource]; root of factory hierarchy
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processLines(..) is attempting to process this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~685~Watchmen~Alan Moore & SomeOtherGuy~Comix~1995-10-01~123456789A, U~697~*U, U~690~Reflected In You~DifferentAuthor~NewPublisher~2012-07-12~987654321X, U~696~*U, U~693~The Road~Cormac McCarthy~BestPushlisher~2012-10-02~12349874565, U~691~*A]
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+19785
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+19785
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:14PM - BookBatchProcessor.processLines(..) completed processing this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~685~Watchmen~Alan Moore & SomeOtherGuy~Comix~1995-10-01~123456789A, U~697~*U, U~690~Reflected In You~DifferentAuthor~NewPublisher~2012-07-12~987654321X, U~696~*U, U~693~The Road~Cormac McCarthy~BestPushlisher~2012-10-02~12349874565, U~691~*A]
+org.springframework.context.support.ClassPathXmlApplicationContext 30/10/2012 04:17PM - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@61decc8c: startup date [Tue Oct 30 16:17:19 GMT 2012]; root of context hierarchy
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:17PM - Loading XML bean definitions from class path resource [ie/cit/patrick/batchApp-context.xml]
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:17PM - Loading XML bean definitions from class path resource [ie/cit/patrick/app-context.xml]
+org.springframework.context.support.PropertySourcesPlaceholderConfigurer 30/10/2012 04:17PM - Loading properties file from class path resource [ie/cit/patrick/propertiesFile.properties]
+org.springframework.beans.factory.support.DefaultListableBeanFactory 30/10/2012 04:17PM - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@55971b94: defining beans [bookDao,memberDao,memberLoansBookDao,libraryService,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,bookBatchFiles,bookBatchProcessor,memberBatchFiles,memberBatchProcessor,dataSource]; root of factory hierarchy
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processLines(..) is attempting to process this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~685~Watchmen~Alan Moore & SomeOtherGuy~Comix~1995-10-01~123456789A, U~697~*U, U~690~Reflected In You~DifferentAuthor~NewPublisher~2012-07-12~987654321X, U~696~*U, U~693~The Road~Cormac McCarthy~BestPushlisher~2012-10-02~12349874565, U~691~*A]
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Wuthering Heights
+Emily Bronte
+Wordsworth Editions Ltd
+1992-05-01
+1853260010
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Python Programming for the Absolute Beginner
+Mike Dawson
+Course Technology PTR
+2010-01-30
+1435455002
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Digital Marketing Strategy Implementation and Practice
+Dave Chaffey
+Pearson
+2012-07-12
+0273746103
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+HTML & CSS: Design and Build Web Sites
+Jon Duckett
+John Wiley & Sons
+2011-11-12
+181118008189
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+How to Design Websites (Portfolio Skills)
+Alan Pipes
+Laurence King
+2011-10-17
+1856697398
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Pride and Prejudice and Zombies
+Jane Austin
+publisher
+2009-01-01
+1594743347
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+The Small Hand
+Susan Hill
+Profile Books
+2010-10-01
+1846682363
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Foucault's Pendulum
+Umberto Eco
+Vintage
+1991-06-2011
+0099287153
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+The Periodic Table
+Primo Levi
+Penguin Classics
+1988-10-07
+0141185147
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Italo Calvino
+Mariner Books
+1978-10-15
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+19785
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+Mariner Books
+19785
+B0058PYMF6
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Invisible Cities
+Italo Calvino
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Invisible Cities
+Italo Calvino
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+685
+Watchmen
+Alan Moore & SomeOtherGuy
+Comix
+1995-10-01
+123456789A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+697
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+690
+Reflected In You
+DifferentAuthor
+NewPublisher
+2012-07-12
+987654321X
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+696
+*U
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+693
+The Road
+Cormac McCarthy
+BestPushlisher
+2012-10-02
+12349874565
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processDecider(..) completed processing these parts: 
+U
+691
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - BookBatchProcessor.processLines(..) completed processing this line: [A~Wuthering Heights~Emily Bronte~Wordsworth Editions Ltd~1992-05-01~1853260010, A~Python Programming for the Absolute Beginner~Mike Dawson~Course Technology PTR~2010-01-30~1435455002, A~Digital Marketing Strategy Implementation and Practice~Dave Chaffey~Pearson~2012-07-12~0273746103, A~HTML & CSS: Design and Build Web Sites~Jon Duckett~John Wiley & Sons~2011-11-12~181118008189, A~How to Design Websites (Portfolio Skills)~Alan Pipes~Laurence King~2011-10-17~1856697398, A~Pride and Prejudice and Zombies~Jane Austin~publisher~2009-01-01~1594743347, A~The Small Hand~Susan Hill~Profile Books~2010-10-01~1846682363, A~Foucault's Pendulum~Umberto Eco~Vintage~1991-06-2011~0099287153, A~The Periodic Table~Primo Levi~Penguin Classics~1988-10-07~0141185147, A~Invisible Cities~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Italo Calvino~Mariner Books~1978-10-15~B0058PYMF6, A~Invisible Cities~Italo Calvino~Mariner Books~19785~B0058PYMF6, A~Invisible Cities~Italo Calvino, U~685~Watchmen~Alan Moore & SomeOtherGuy~Comix~1995-10-01~123456789A, U~697~*U, U~690~Reflected In You~DifferentAuthor~NewPublisher~2012-07-12~987654321X, U~696~*U, U~693~The Road~Cormac McCarthy~BestPushlisher~2012-10-02~12349874565, U~691~*A]
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processLines(..) is attempting to process this line: [A~Bob Hope~50 Rodeo Drive~~Limerick~0871234567, A~Chris Stephenson~New House~Stephen Street~Boyle~0331234567, A~Vera Saunders~24A~Elysian~Cork~0211234667, A~Steven Saunders~24A~Elysian~Cork~0211234667, A~Logan Wolverine~Hjaltland~Pullerick~Cork~0211234667, A~Betty Simpson~UpHouse~Ballincollig~Cork~0214546876, A~Ralf Wigan~3 Redmill~Springfield~Cork~0221221111, A~Peter Robertson~Hajltland~Pullerick~Cork~0217336699, A~Patricia Roberton~Hjaltland~Pullerick~Cork~0217336699, A~Liz Giesbers~Terelton~~Cork~0214569393, U~135~Stewart Patton~South Road~Lerwick~Shetland~0871234567, U~124~*I, X~Some Guy~Wrong~Place~666, U~135~*I, P~125~23.50, U~137~Ryan Adams~Flat 10b~Manhatton~New York~0214569784, P~131~0.65, U~139~Winston Churchill~StormingBeaches~Normandy~France~0044152681, P~135~1.00, U~127~*A]
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Bob Hope
+50 Rodeo Drive
+
+Limerick
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Chris Stephenson
+New House
+Stephen Street
+Boyle
+0331234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Vera Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Steven Saunders
+24A
+Elysian
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Logan Wolverine
+Hjaltland
+Pullerick
+Cork
+0211234667
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Betty Simpson
+UpHouse
+Ballincollig
+Cork
+0214546876
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Ralf Wigan
+3 Redmill
+Springfield
+Cork
+0221221111
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Peter Robertson
+Hajltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Patricia Roberton
+Hjaltland
+Pullerick
+Cork
+0217336699
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+A
+Liz Giesbers
+Terelton
+
+Cork
+0214569393
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+135
+Stewart Patton
+South Road
+Lerwick
+Shetland
+0871234567
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+124
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+X
+Some Guy
+Wrong
+Place
+666
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+X
+Some Guy
+Wrong
+Place
+666
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+135
+*I
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+P
+125
+23.50
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+137
+Ryan Adams
+Flat 10b
+Manhatton
+New York
+0214569784
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+P
+131
+0.65
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+139
+Winston Churchill
+StormingBeaches
+Normandy
+France
+0044152681
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+P
+135
+1.00
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) is attempting to validate these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.validateStringArray(..) completed validating these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) is attempting to process these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processDecider(..) completed processing these parts: 
+U
+127
+*A
+
+ie.cit.patrick.service.BatchProcessor 30/10/2012 04:17PM - MemberBatchProcessor.processLines(..) completed processing this line: [A~Bob Hope~50 Rodeo Drive~~Limerick~0871234567, A~Chris Stephenson~New House~Stephen Street~Boyle~0331234567, A~Vera Saunders~24A~Elysian~Cork~0211234667, A~Steven Saunders~24A~Elysian~Cork~0211234667, A~Logan Wolverine~Hjaltland~Pullerick~Cork~0211234667, A~Betty Simpson~UpHouse~Ballincollig~Cork~0214546876, A~Ralf Wigan~3 Redmill~Springfield~Cork~0221221111, A~Peter Robertson~Hajltland~Pullerick~Cork~0217336699, A~Patricia Roberton~Hjaltland~Pullerick~Cork~0217336699, A~Liz Giesbers~Terelton~~Cork~0214569393, U~135~Stewart Patton~South Road~Lerwick~Shetland~0871234567, U~124~*I, X~Some Guy~Wrong~Place~666, U~135~*I, P~125~23.50, U~137~Ryan Adams~Flat 10b~Manhatton~New York~0214569784, P~131~0.65, U~139~Winston Churchill~StormingBeaches~Normandy~France~0044152681, P~135~1.00, U~127~*A]
+org.springframework.context.support.ClassPathXmlApplicationContext 30/10/2012 04:19PM - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@72027e0d: startup date [Tue Oct 30 16:19:23 GMT 2012]; root of context hierarchy
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:19PM - Loading XML bean definitions from class path resource [ie/cit/patrick/consoleapp-context.xml]
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:19PM - Loading XML bean definitions from class path resource [ie/cit/patrick/app-context.xml]
+org.springframework.beans.factory.xml.XmlBeanDefinitionReader 30/10/2012 04:19PM - Loading XML bean definitions from class path resource [ie/cit/patrick/aspects-config.xml]
+org.springframework.context.support.PropertySourcesPlaceholderConfigurer 30/10/2012 04:19PM - Loading properties file from class path resource [ie/cit/patrick/propertiesFile.properties]
+org.springframework.beans.factory.support.DefaultListableBeanFactory 30/10/2012 04:19PM - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@f891bde: defining beans [bookDao,memberDao,memberLoansBookDao,libraryService,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,loanReturnLogger,memberDBAccessLogger,bookDBAccessLogger,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource]; root of factory hierarchy

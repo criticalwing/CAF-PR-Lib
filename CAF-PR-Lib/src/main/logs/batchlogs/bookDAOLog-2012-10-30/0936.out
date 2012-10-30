@@ -1,0 +1,9 @@
+ie.cit.patrick.dao.BookDao 30/10/2012 09:36AM - JdbcBookDao.addBook(..) is attempting to add new Book: Foucalts Pendulum to database
+ie.cit.patrick.dao.BookDao 30/10/2012 09:36AM - JdbcBookDao.addBook(..) successfully added Book: Foucalts Pendulum to the database
+
+ie.cit.patrick.dao.BookDao 30/10/2012 09:36AM - JdbcBookDao.updateBook(..) is attempting to update Book: Foucalts Pendulum in database
+ie.cit.patrick.dao.BookDao 30/10/2012 09:36AM - JdbcBookDao.updateBook(..) successfully updated Book: Foucalts Pendulum in database
+
+ie.cit.patrick.dao.BookDao 30/10/2012 09:36AM - JdbcBookDao.deleteBook(..)is attempting to delete Book with Id: 4455 from database
+ie.cit.patrick.dao.BookDao 30/10/2012 09:36AM - JdbcBookDao.deleteBook(..) successfully deleted Book: 4455 from database
+

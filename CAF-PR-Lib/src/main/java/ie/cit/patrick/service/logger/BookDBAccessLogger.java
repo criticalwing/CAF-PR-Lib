@@ -67,6 +67,20 @@ public class BookDBAccessLogger {
 		//System.out.print("Member: " + bookId + " successfully deleted from database\n\n");
 	}
 
+	@Before("execution(* *..BookDao+.makeBook*(..))")
+	public void trackBookUpdateAvailstart(JoinPoint point){
+		int id = (int)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		bookDBlogger.info(method + " is attempting to update Book: " + id + " in database");
+		//System.out.print("Attempting to update Book: " + book.getTitle() + " in database\n");
+	}
 	
+	@After("execution(* *..BookDao+.makeBook*(..))")
+	public void trackBookUpdateAvailend(JoinPoint point){
+		int id = (int)point.getArgs()[0];
+		String method = point.getSignature().toShortString();
+		bookDBlogger.info(method + " successfully updated Book: " + id + " in database\n");
+		//System.out.print("Book: " + book.getTitle() + " successfully updated in database\n\n");
+	}
 	
 }
